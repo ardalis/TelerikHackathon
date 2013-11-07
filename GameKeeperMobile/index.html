@@ -74,32 +74,34 @@
          data-title="Create Event"
          data-model="app.viewModels.createEvent">
         <div class="view-content">
-            <ul data-role="listview">
-                <li>
-                    <label>
-                        Title
-                        <input type="text" data-bind="value: title" />
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        Location
-                        <input type="text" data-bind="value: location" />
-                    </label>
-                </li>
-                <li class="current-location">
-                    <button class="km-button" data-bind="click: onUseCurrentLocationTapped">Use Current Location</button>
-                </li>
-                <li>
-                    <label>
-                        Date
-                        <input type="date" data-bind="value: date" />
-                    </label>
-                </li>
-                <li class="button-row">
-                    <button class="km-button">Save</button>
-                </li>
-            </ul>
+            <form action="#" method="post" id="create-event-form">
+                <ul data-role="listview">
+                    <li>
+                        <label>
+                            Title
+                            <input type="text" data-bind="value: title" required data-required-msg="Event title is required." />
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            Location
+                            <input type="text" data-bind="value: location" />
+                        </label>
+                    </li>
+                    <li class="current-location">
+                        <button class="km-button" data-bind="click: onUseCurrentLocationTapped">Use Current Location</button>
+                    </li>
+                    <li>
+                        <label>
+                            Date
+                            <input type="date" data-bind="value: date" />
+                        </label>
+                    </li>
+                    <li class="button-row">
+                        <button type="submit" class="km-button" data-bind="click: onSaveTapped">Save</button>
+                    </li>
+                </ul>
+            </form>
         </div>
     </div>
 
