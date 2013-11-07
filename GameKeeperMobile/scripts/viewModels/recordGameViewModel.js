@@ -48,7 +48,8 @@
                 var selectedPlayerViewModels = datasources.players.data().filter(function (player) {
                     return playerIds.indexOf(player.id) >= 0;
                 }).map(function (player) {
-                    return {
+                    return vm.get("selectedPlayers").filter(function (pvm) { return pvm.id === player.id; })[0] || {
+                        id: player.id,
                         Name: player.Name,
                         Email: player.Email,
                         IsWinner: false
