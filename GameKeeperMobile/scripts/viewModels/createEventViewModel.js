@@ -1,8 +1,6 @@
 ﻿define(["radio"], function (radio) {
     "use strict";
 
-    var validator = $("#create-event-form").kendoValidator().data("kendoValidator");
-
     var vm = kendo.observable({
         title: "",
         location: "",
@@ -14,6 +12,7 @@
             });
         },
         onSaveTapped: function (e) {
+            var validator = $("#create-event-form").kendoValidator().data("kendoValidator");
             e.preventDefault();
             if (validator.validate()) {
                 radio("event/created").broadcast({
