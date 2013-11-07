@@ -17,9 +17,9 @@
             e.preventDefault();
             if (validator.validate()) {
                 radio("event/created").broadcast({
-                    title: vm.get("title"),
-                    location: vm.get("location"),
-                    date: vm.get("date")
+                    Name: vm.get("title"),
+                    Location: vm.get("location"),
+                    StartDate: vm.get("date")
                 });
                 vm.clear();
             }
