@@ -10,7 +10,7 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="scripts/everlive.all.min.js"></script>
-    <script src="scripts/md5.js"></script>
+    <script src="scripts/kendo.data.everlive.min.js"></script>
     <script src="scripts/require.js" data-main="scripts/app"></script>
 </head>
 <body>
@@ -23,40 +23,8 @@
 
         <div class="view-content">
             <h1>GameKeeper</h1>
-            <a data-role="button" href="#record-game">Record Game</a>
+            <a data-role="button" href="views/record-game.html">Record Game</a>
             <img data-bind="gravatar: gravatarEmail" data-gravatar-size="64" />
-            <!--<p>
-                <img data-bind="attr: { src: testGravatarUrl }" />
-                Icenium&trade; enables you to build cross-platform device applications regardless of your
-                    development platform by combining the convenience of a local development toolset with the
-                    power and flexibility of the cloud.
-            </p>-->
-        </div>
-    </div>
-
-    <!--Record Game-->
-    <div id="record-game"
-         data-role="view"
-         data-title="Record Game Result"
-         data-model="app.viewModels.recordGame">
-        <div class="view-content">
-            <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
-            <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent">
-                <span data-bind="text: selectedEventTitle">Choose Event</span>
-            </a>
-        </div>
-    </div>
-
-    <!--Choose Event-->
-    <div id="choose-event"
-         data-role="view"
-         data-title="Choose Event"
-         data-model="app.viewModels.recordGame">
-        <div class="view-content">
-            <div data-role="listview"
-                 data-bind="source: eventsDataSource"
-                 data-template="choose-event-list-item-template"
-                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"></div>
         </div>
     </div>
 
@@ -88,6 +56,10 @@
 
     <!--Templates-->
     <script id="choose-event-list-item-template" type="text/x-kendo-template">
+        #: Name #
+    </script>
+
+    <script id="choose-game-list-item-template" type="text/x-kendo-template">
         #: title #
     </script>
 </body>

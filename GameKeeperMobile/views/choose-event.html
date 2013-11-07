@@ -1,0 +1,17 @@
+﻿<div id="choose-event"
+        data-role="view"
+        data-title="Choose Event"
+        data-model="app.viewModels.chooseEvent">
+    <div class="view-content">
+        <div data-role="listview"
+                data-bind="source: dataSource"
+                data-template="choose-event-list-item-template"
+                data-filterable="{ field: 'Name', ignoreCase: true, operator: 'contains' }"
+                data-click="app.viewModels.chooseEvent.onItemSelected"></div>
+    </div>
+    <div data-role="footer">
+        <div data-role="navbar">
+            <a data-role="button" href="views/create-event.html">Create Event</a>
+        </div>
+    </div>
+</div>

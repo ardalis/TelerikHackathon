@@ -1,0 +1,17 @@
+﻿<div id="choose-game"
+        data-role="view"
+        data-title="Choose Game"
+        data-model="app.viewModels.chooseGame">
+    <div class="view-content">
+        <div data-role="listview"
+                data-bind="source: dataSource"
+                data-template="choose-game-list-item-template"
+                data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
+                data-click="app.viewModels.chooseGame.onItemSelected"></div>
+    </div>
+    <div data-role="footer">
+        <div data-role="navbar">
+            <a data-role="button" href="views/create-game.html">Create Game</a>
+        </div>
+    </div>
+</div>

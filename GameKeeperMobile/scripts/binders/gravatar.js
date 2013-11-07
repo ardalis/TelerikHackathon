@@ -1,8 +1,8 @@
-﻿define([], function () {
+﻿define(["md5"], function (md5) {
     "use strict";
 
     var getImageUrlForEmail = function (email, size) {
-        var emailHash = CryptoJS.MD5(email.trim().toLowerCase()).toString();
+        var emailHash = md5(email.trim().toLowerCase()).toString();
         size = size || 32;
         return kendo.format("http://www.gravatar.com/avatar/{0}?s={1}", emailHash, size);
     }

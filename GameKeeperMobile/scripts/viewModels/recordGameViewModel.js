@@ -1,25 +1,43 @@
-﻿define([], function () {
+﻿define([
+    "radio",
+    "viewModels/chooseEventViewModel",
+    "viewModels/chooseGameViewModel"
+], function (
+    radio,
+    chooseEventDialog,
+    chooseGameDialog
+) {
     "use strict";
-
-    var fakeEventsDataSource = new kendo.data.DataSource({
-        data: _.range(1, 12).map(function (i) {
-            return {
-                id: kendo.guid(),
-                title: kendo.format("BOGA {0}/{0}", i)
-            };
-        })
-    });
 
     var vm = kendo.observable({
         selectedEvent: null,
+        selectedGame: null,
+
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
         },
         selectedEventTitle: function () {
-            return vm.hasSelectedEvent() ? vm.get("selectedEvent").title : "";
+            return vm.hasSelectedEvent() ? vm.get("selectedEvent").Name : "";
         },
-        eventFilter: "",
-        eventsDataSource: fakeEventsDataSource
+        
+        hasSelectedGame: function () {
+            return vm.get("selectedGame") !== null;
+        },
+        selectedGameTitle: function () {
+            return vm.hasSelectedGame() ? vm.get("selectedGame").title : "";
+        },
+
+        onChooseEventTapped: function () {
+            chooseEventDialog.show(function (event) {
+                vm.set("selectedEvent", event);
+            });
+        },
+        onChooseGameTapped: function () {
+            chooseGameDialog.show(function (game) {
+                vm.set("selectedGame", game);
+            });
+        }
     });
+
     return vm;
 });
