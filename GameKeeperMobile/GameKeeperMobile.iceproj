@@ -67,6 +67,12 @@
     <Content Include="kendo\styles\images\kendoui.woff" />
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\everlive.all.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\require.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="scripts\weather.js" />
     <Content Include="scripts\location.js" />
     <Content Include="scripts\login.js" />
@@ -94,6 +100,24 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Resources\" />
+    <Folder Include="App_Resources\Android\" />
+    <Folder Include="App_Resources\Android\drawable-hdpi\" />
+    <Folder Include="App_Resources\Android\drawable-ldpi\" />
+    <Folder Include="App_Resources\Android\drawable-mdpi\" />
+    <Folder Include="App_Resources\Android\drawable-nodpi\" />
+    <Folder Include="App_Resources\iOS\" />
+    <Folder Include="data\" />
+    <Folder Include="kendo\" />
+    <Folder Include="kendo\js\" />
+    <Folder Include="kendo\styles\" />
+    <Folder Include="kendo\styles\images\" />
+    <Folder Include="Plugins\" />
+    <Folder Include="scripts\" />
+    <Folder Include="styles\" />
+    <Folder Include="styles\images\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
   <!--
