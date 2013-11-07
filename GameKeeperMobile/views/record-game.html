@@ -16,8 +16,8 @@
                 <span></span>
                 <a data-role="button" data-click="app.viewModels.recordGame.onChoosePlayersTapped">Choose Players</a>
             </li>
-            <li>
-                <ul data-bind="source: selectedPlayers" data-template="game-player-list-item-template">
+            <li data-bind="visible: selectedPlayers.length">
+                <ul class="winner-list" data-role="kendo.ui.ListView" data-bind="source: selectedPlayers" data-template="game-player-list-item-template">
                 </ul>
             </li>
         </ul>

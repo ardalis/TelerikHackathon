@@ -37,6 +37,22 @@ body, html {
     margin-right: 0.5em;
 }
 
+.winner-list {
+    padding: 0;
+    margin: 0;
+}
+
+.winner-list li {
+    padding: 3px;
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;
+}
+
+.winner-list li[data-is-winner=true] {
+    -webkit-transform: rotate(45deg);
+}
+
 /* IMAGE STYLES*/
 .img {
 	background-image: url(../styles/images/icenium.png);

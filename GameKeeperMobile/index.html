@@ -149,7 +149,9 @@
     </script>
 
     <script id="game-player-list-item-template" type="text/x-kendo-template">
-        #: data #
+        <li data-bind="click: onPlayerIconTapped, attr: { data-is-winner: IsWinner }">
+            <img data-bind="gravatar: Email" data-gravatar-size="48" class="position-left" />
+        </li>
     </script>
 </body>
 </html>
