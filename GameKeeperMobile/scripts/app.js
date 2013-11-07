@@ -25,8 +25,7 @@ require(["gravatar"], function (gravatar) {
     };
 
     app.application = new kendo.mobile.Application(document.body, {
-        layout: "tabstrip-layout",
-        statusBarStyle: statusBarStyle,
-        skin: "flat"
+        layout: "default-layout",
+        statusBarStyle: statusBarStyle
     });
 });
