@@ -45,7 +45,7 @@
                 // hooray!
                 vm.set("selectedPlayers", playerIds);
                 console.log(playerIds);
-            });
+            }, vm.get("selectedPlayers"));
         }
     });
 
