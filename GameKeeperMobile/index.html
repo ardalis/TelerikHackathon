@@ -42,16 +42,6 @@
                 <span data-role="view-title"></span>
             </div>
         </div>
-
-        <!--Footer-->
-        <!--<div data-role="footer">
-            <div data-role="tabstrip">
-                <a href="#tabstrip-home" data-icon="home">Home</a>
-                <a href="#tabstrip-login" data-icon="contacts">Login</a>
-                <a href="#tabstrip-location" data-icon="search">Location</a>
-                <a href="#tabstrip-weather" data-icon="globe">Weather</a>
-            </div>
-        </div>-->
     </div>
 
     <!--Templates-->
@@ -61,6 +51,12 @@
 
     <script id="choose-game-list-item-template" type="text/x-kendo-template">
         #: Name #
+    </script>
+
+    <script id="choose-players-list-item-template" type="text/x-kendo-template">
+        <img data-bind="gravatar: Email" data-gravatar-size="32" />
+        <span class="player-name" data-bind="text: Name"></span>
+        <span class="player-email" data-bind="text: Email"></span>
     </script>
 </body>
 </html>
