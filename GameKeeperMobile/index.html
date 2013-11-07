@@ -54,9 +54,12 @@
     </script>
 
     <script id="choose-players-list-item-template" type="text/x-kendo-template">
-        <img data-bind="gravatar: Email" data-gravatar-size="32" />
-        <span class="player-name" data-bind="text: Name"></span>
-        <span class="player-email" data-bind="text: Email"></span>
+        <label>
+            <img data-bind="gravatar: Email" data-gravatar-size="32" class="position-left player-list-avatar" />
+            <div class="player-name" data-bind="text: Name"></div>
+            <div class="player-email" data-bind="text: Email"></div>
+            <input type="checkbox" />
+        </label>
     </script>
 </body>
 </html>

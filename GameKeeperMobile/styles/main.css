@@ -24,6 +24,19 @@ body, html {
 	font-size: 1em;
 }
 
+/* PLAYER LIST */
+.player-name {
+}
+
+.player-email {
+    font-size: smaller;
+    color: #888;
+}
+
+.player-list-avatar {
+    margin-right: 0.5em;
+}
+
 /* IMAGE STYLES*/
 .img {
 	background-image: url(../styles/images/icenium.png);
