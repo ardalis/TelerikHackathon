@@ -45,6 +45,10 @@
                     <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="invisible: hasSelectedEvent">Choose Event</a>
                     <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="visible: hasSelectedEvent"><span data-bind="text: selectedEventTitle"></span></a>
                 </li>
+                <li>
+                    <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="invisible: hasSelectedGame">Choose Game</a>
+                    <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="visible: hasSelectedGame"><span data-bind="text: selectedGameTitle"></span></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -105,6 +109,25 @@
         </div>
     </div>
 
+    <!--Choose Game-->
+    <div id="choose-game"
+         data-role="view"
+         data-title="Choose Game"
+         data-model="app.viewModels.chooseGame">
+        <div class="view-content">
+            <div data-role="listview"
+                 data-bind="source: dataSource"
+                 data-template="choose-game-list-item-template"
+                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
+                 data-click="app.viewModels.chooseGame.onItemSelected"></div>
+        </div>
+        <div data-role="footer">
+            <div data-role="navbar">
+                <a href="#create-game">Create Game</a>
+            </div>
+        </div>
+    </div>
+
     <!--Layout-->
     <div data-role="layout" data-id="plain-layout">
 
@@ -133,6 +156,10 @@
 
     <!--Templates-->
     <script id="choose-event-list-item-template" type="text/x-kendo-template">
+        #: title #
+    </script>
+
+    <script id="choose-game-list-item-template" type="text/x-kendo-template">
         #: title #
     </script>
 </body>
