@@ -49,9 +49,12 @@
     <div id="choose-event"
          data-role="view"
          data-title="Choose Event"
-         data-model="app.viewModels.chooseEvent">
+         data-model="app.viewModels.recordGame">
         <div class="view-content">
-            
+            <div data-role="listview"
+                 data-bind="source: eventsDataSource"
+                 data-template="choose-event-list-item-template"
+                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"></div>
         </div>
     </div>
 
@@ -80,5 +83,10 @@
             </div>
         </div>-->
     </div>
+
+    <!--Templates-->
+    <script id="choose-event-list-item-template" type="text/x-kendo-template">
+        #: title #
+    </script>
 </body>
 </html>
