@@ -5,7 +5,18 @@ Application Name: GameKeeper
 API Key: syRNNMNu6044zxPT
 
 **/
-require(["gravatar"], function (gravatar) {
+require.config({
+    paths: {
+        radio: "radio.min"
+    },
+    shim: {
+        radio: {
+            exports: "radio"
+        }
+    }
+});
+
+require(["gravatar", "radio"], function (gravatar, radio) {
     "use strict";
 
     var global = window,
