@@ -92,15 +92,24 @@
     </Content>
     <Content Include="data\weather.json" />
     <Content Include="scripts\viewModels\chooseGameViewModel.js" />
+    <Content Include="scripts\viewModels\choosePlayersViewModel.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="scripts\viewModels\createEventViewModel.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="scripts\viewModels\createGameViewModel.js" />
+    <Content Include="scripts\viewModels\createPlayerViewModel.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="scripts\viewModels\index.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
     <Content Include="scripts\viewModels\selectorViewModel.js" />
     <Content Include="views\choose-event.html" />
     <Content Include="views\choose-game.html" />
+    <Content Include="views\choose-players.html">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\create-event.html" />
     <Content Include="views\create-game.html" />
     <Content Include="styles\images\icenium.png" />
@@ -125,6 +134,9 @@
     <Content Include="cordova.android.js">
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
+    </Content>
+    <Content Include="views\create-player.html">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="views\record-game.html" />
   </ItemGroup>
