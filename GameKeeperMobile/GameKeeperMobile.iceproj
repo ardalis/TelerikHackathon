@@ -73,9 +73,6 @@
     <Content Include="scripts\require.js">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="scripts\weather.js" />
-    <Content Include="scripts\location.js" />
-    <Content Include="scripts\login.js" />
     <Content Include="data\weather.json" />
     <Content Include="styles\images\icenium.png" />
     <Content Include="styles\images\icenium2x.png" />
