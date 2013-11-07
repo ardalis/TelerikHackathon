@@ -5,7 +5,8 @@
     "viewModels/chooseGameViewModel",
     "viewModels/createGameViewModel",
     "viewModels/choosePlayersViewModel",
-    "viewModels/createPlayerViewModel"
+    "viewModels/createPlayerViewModel",
+    "viewModels/userProfileViewModel"
 ], function (
     recordGameViewModel,
     chooseEventViewModel,
@@ -13,7 +14,8 @@
     chooseGameViewModel,
     createGameViewModel,
     choosePlayersViewModel,
-    createPlayerViewModel
+    createPlayerViewModel,
+    userProfileViewModel
 ) {
     "use strict";
 
@@ -25,6 +27,7 @@
         createGame: createGameViewModel,
         choosePlayers: choosePlayersViewModel,
         createPlayer: createPlayerViewModel,
+        userProfile: userProfileViewModel,
         home: kendo.observable({
             gravatarEmail: 'Chris.Wagner@telerik.com'
         })

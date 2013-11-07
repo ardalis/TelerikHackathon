@@ -1,10 +1,10 @@
 ﻿define(["radio"], function (radio) {
     "use strict";
 
-    var createSelectorViewModel = function(type, dataSource) {
+    var createSelectorViewModel = function(type, dataSource, extension) {
         var selectedCallback;
 
-        var vm = kendo.observable({
+        var vm = kendo.observable(_.extend({
             dataSource: dataSource,
 
             show: function (callback) {
@@ -12,11 +12,15 @@
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 
+            complete: function (result) {
+                selectedCallback(result);
+            },
+
             onItemSelected: function (e) {
-                selectedCallback(e.dataItem);
+                vm.complete(e.dataItem);
                 window.app.application.navigate("#:back");
             }
-        });
+        }, extension || {}));
 
         radio(type + "/created").subscribe(function (item) {
             dataSource.add(item);

@@ -8,7 +8,7 @@
             var validator = $("#create-player-form").kendoValidator().data("kendoValidator");
             e.preventDefault();
             if (validator.validate()) {
-                radio("players/created").broadcast({
+                radio("player/created").broadcast({
                     Name: vm.get("name"),
                     Email: vm.get("email")
                 });
