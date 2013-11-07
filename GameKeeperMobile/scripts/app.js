@@ -34,6 +34,7 @@ require(["viewModels/index", "radio"], function (viewModels, radio) {
 
     app.application = new kendo.mobile.Application(document.body, {
         layout: "default-layout",
-        statusBarStyle: statusBarStyle
+        statusBarStyle: statusBarStyle,
+        transition: "slide"
     });
 });
