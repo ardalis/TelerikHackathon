@@ -29,5 +29,10 @@
         }
     });
 
+    radio("event/created").subscribe(function (event) {
+        fakeEventsDataSource.add(event);
+        window.app.application.navigate("#:back");
+    });
+
     return vm;
 });
