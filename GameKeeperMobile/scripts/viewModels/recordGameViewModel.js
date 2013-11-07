@@ -24,7 +24,7 @@
             return vm.get("selectedGame") !== null;
         },
         selectedGameTitle: function () {
-            return vm.hasSelectedGame() ? vm.get("selectedGame").title : "";
+            return vm.hasSelectedGame() ? vm.get("selectedGame").Name : "";
         },
 
         onChooseEventTapped: function () {
