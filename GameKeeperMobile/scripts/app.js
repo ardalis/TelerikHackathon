@@ -1,3 +1,10 @@
+/** 
+Everlive Credentials:
+
+Application Name: GameKeeper
+API Key: syRNNMNu6044zxPT
+
+**/
 (function (global) {
 	var mobileSkin = "",
 		app = global.app = global.app || {},
