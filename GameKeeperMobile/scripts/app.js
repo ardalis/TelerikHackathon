@@ -5,28 +5,31 @@ Application Name: GameKeeper
 API Key: syRNNMNu6044zxPT
 
 **/
-(function (global) {
-	var mobileSkin = "",
-		app = global.app = global.app || {},
-		os = kendo.support.mobileOS,
-		statusBarStyle = os.ios && os.flatVersion >= 700 ? "black-translucent" : "black";
+require([], function () {
+    "use strict";
 
-	document.addEventListener('deviceready', function () {
-		navigator.splashscreen.hide();
-	}, false);
+    var global = window,
+        mobileSkin = "",
+        app = global.app = global.app || {},
+        os = kendo.support.mobileOS,
+        statusBarStyle = os.ios && os.flatVersion >= 700 ? "black-translucent" : "black";
 
-	app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout", statusBarStyle: statusBarStyle });
+    document.addEventListener('deviceready', function () {
+        navigator.splashscreen.hide();
+    }, false);
 
-	app.changeSkin = function (e) {
-		if (e.sender.element.text() === "Flat") {
-			e.sender.element.text("Native");
-			mobileSkin = "flat";
-		}
-		else {
-			e.sender.element.text("Flat");
-			mobileSkin = "";
-		}
+    app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout", statusBarStyle: statusBarStyle });
 
-		app.application.skin(mobileSkin);
-	};
-})(window);
+    app.changeSkin = function (e) {
+        if (e.sender.element.text() === "Flat") {
+            e.sender.element.text("Native");
+            mobileSkin = "flat";
+        }
+        else {
+            e.sender.element.text("Flat");
+            mobileSkin = "";
+        }
+
+        app.application.skin(mobileSkin);
+    };
+});
