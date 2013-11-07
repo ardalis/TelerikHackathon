@@ -45,13 +45,11 @@
         },
         onChoosePlayersTapped: function () {
             choosePlayersDialog.show(function (playerIds) {
-                // hooray!
                 vm.set("selectedPlayerIds", playerIds);
                 vm.set("selectedPlayers", datasources.players.data().filter(function (player) {
                     return playerIds.indexOf(player.id) >= 0;
                 }));
-                console.log(playerIds);
-            }, vm.get("selectedPlayers"));
+            }, vm.get("selectedPlayerIds"));
         }
     });
 
