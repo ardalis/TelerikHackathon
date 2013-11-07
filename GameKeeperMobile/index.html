@@ -38,10 +38,12 @@
          data-title="Record Game Result"
          data-model="app.viewModels.recordGame">
         <div class="view-content">
-            <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
-            <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent">
-                <span data-bind="text: selectedEventTitle">Choose Event</span>
-            </a>
+            <ul data-role="listview">
+                <li>
+                    <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+                    <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent"><span data-bind="text: selectedEventTitle"></span></a>
+                </li>
+            </ul>
         </div>
     </div>
 
