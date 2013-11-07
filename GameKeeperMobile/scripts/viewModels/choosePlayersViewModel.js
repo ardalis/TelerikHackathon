@@ -1,7 +1,7 @@
 ﻿define(["viewModels/selectorViewModel"], function (selectorViewModel) {
     "use strict";
 
-    var gameDataSource = new kendo.data.DataSource({
+    var playerDataSource = new kendo.data.DataSource({
         type: 'everlive',
         transport: {
             typeName: 'Players'
@@ -12,7 +12,7 @@
         sort: { field: "Name", dir: "asc" }
     });
 
-    var vm = selectorViewModel.create('players', gameDataSource, {
+    var vm = selectorViewModel.create('players', playerDataSource, {
         selectedPlayers: [],
         onItemSelected: function () { }
     });
