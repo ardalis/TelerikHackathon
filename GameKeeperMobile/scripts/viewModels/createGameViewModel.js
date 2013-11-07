@@ -8,7 +8,7 @@
             e.preventDefault();
             if (validator.validate()) {
                 radio("game/created").broadcast({
-                    title: vm.get("title"),
+                    Name: vm.get("title"),
                 });
                 vm.clear();
             }
