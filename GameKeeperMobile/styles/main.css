@@ -37,6 +37,11 @@ body, html {
     margin-right: 0.5em;
 }
 
+.winner-list {
+    padding: 0;
+    margin: 0;
+}
+
 /* IMAGE STYLES*/
 .img {
 	background-image: url(../styles/images/icenium.png);

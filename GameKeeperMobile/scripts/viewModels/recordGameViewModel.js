@@ -2,18 +2,21 @@
     "radio",
     "viewModels/chooseEventViewModel",
     "viewModels/chooseGameViewModel",
-    "viewModels/choosePlayersViewModel"
+    "viewModels/choosePlayersViewModel",
+    "datasources"
 ], function (
     radio,
     chooseEventDialog,
     chooseGameDialog,
-    choosePlayersDialog
+    choosePlayersDialog,
+    datasources
 ) {
     "use strict";
 
     var vm = kendo.observable({
         selectedEvent: null,
         selectedGame: null,
+        selectedPlayerIds: [],
         selectedPlayers: [],
 
         hasSelectedEvent: function () {
@@ -43,7 +46,10 @@
         onChoosePlayersTapped: function () {
             choosePlayersDialog.show(function (playerIds) {
                 // hooray!
-                vm.set("selectedPlayers", playerIds);
+                vm.set("selectedPlayerIds", playerIds);
+                vm.set("selectedPlayers", datasources.players.data().filter(function (player) {
+                    return playerIds.indexOf(player.id) >= 0;
+                }));
                 console.log(playerIds);
             }, vm.get("selectedPlayers"));
         }
