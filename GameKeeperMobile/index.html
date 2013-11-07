@@ -1,14 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
     <script src="scripts/everlive.all.min.js"></script>
     <script src="scripts/kendo.data.everlive.min.js"></script>
     <script src="scripts/require.js" data-main="scripts/app"></script>
@@ -16,16 +18,129 @@
 <body>
     <!--Home-->
     <div id="tabstrip-home"
-        data-role="view"
-        data-title="Home"
-        data-layout="plain-layout"
-        data-model="app.viewModels.home">
+         data-role="view"
+         data-title="Home"
+         data-layout="plain-layout"
+         data-model="app.viewModels.home">
 
         <div class="view-content">
             <h1>GameKeeper</h1>
-            <a data-role="button" href="views/record-game.html">Record Game</a>
+
+            <a data-role="button" href="#record-game">Record Game</a>
+
+            <a data-role="button" href="#my-profile">My Profile</a>
+
             <img data-bind="gravatar: gravatarEmail" data-gravatar-size="64" />
+
+            <!--<p>
+                <img data-bind="attr: { src: testGravatarUrl }" />
+                Icenium&trade; enables you to build cross-platform device applications regardless of your
+                    development platform by combining the convenience of a local development toolset with the
+                    power and flexibility of the cloud.
+            </p>-->
         </div>
+    </div>
+
+    <!--Record Game-->
+    <div id="record-game"
+         data-role="view"
+         data-title="Record Game Result"
+         data-model="app.viewModels.recordGame">
+        <div class="view-content">
+            <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+            <br />
+            <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent">
+                <span data-bind="text: selectedEventTitle">Choose Event</span>
+            </a>
+        </div>
+    </div>
+
+    <!--Choose Event-->
+    <div id="choose-event"
+         data-role="view"
+         data-title="Choose Event"
+         data-model="app.viewModels.recordGame">
+        <div class="view-content">
+            <div data-role="listview"
+                 data-bind="source: eventsDataSource"
+                 data-template="choose-event-list-item-template"
+                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"></div>
+        </div>
+    </div>
+
+    <!-- User Profile Page -->
+    <div id="my-profile"
+         data-role="view"
+         data-title="My Profile"
+         data-model="app.viewModels.userProfile">
+
+        <div class="view-content">
+
+            <table style="margin: 10px 5px; ">
+                <tr>
+                    <td rowspan="2"><img data-bind="gravatar: email" data-gravatar-size="64" /></td>
+                    <td align="left"><h3 data-bind="text: name" style="margin: 0px;"></h3></td>
+                </tr>
+                <tr>
+                    <td align="left">Active since: <span id="activeSince" data-bind="text: formattedCreateDate()"></span></td>
+                </tr>
+            </table>
+
+            <table style="width: 100%;" border="0">
+                <tr>
+                    <td style="text-align: center; width: 50%;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentMatches"></h1><h5>Matches last 90 days</h5></td>
+                    <td style="text-align: center;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentWins"></h1><h5>Wins last 90 days</h5></td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <div id="my-topgames-chart"
+                             data-role="chart"
+                             data-title="Top Games"
+                             data-legend="{position: 'bottom'}"
+                             data-series-defaults="{type: 'pie'}"
+                             data-series="[{
+                             field: 'wins', categoryField: 'name', padding: 0}]"
+                             data-bind="source: topGames"></div>
+                    </td>
+                    <td align="center">
+                        <div id="my-winloss-chart"
+                             data-role="chart"
+                             data-title="Win / Loss Ratio"
+                             data-series-colors="[ 'green','red']"
+                             data-legend="{position: 'bottom'}"
+                             data-series-defaults="{type: 'pie'}"
+                             data-series="[{
+                             field: 'count', categoryField: 'name', padding: 0}]"
+                             data-bind="source: winLoss"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <b>Biggest Competitor:</b><span data-bind="text: frequentOpp"></span>  (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>Toughest to Beat:</b><span data-bind="text: lossOpp"></span>  (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>Easiest to Beat:</b><span data-bind="text: winOpp"></span>  (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
+                    </td>
+                </tr>
+
+            </table>
+
+            <div>
+                <h3>Achievements</h3>
+            </div>
+
+        </div>
+
+
     </div>
 
     <!--Layout-->

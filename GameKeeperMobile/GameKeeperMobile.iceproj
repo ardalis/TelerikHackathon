@@ -61,10 +61,12 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
+    <Content Include="kendo\js\kendo.dataviz.mobile.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\kendoui.ttf" />
     <Content Include="kendo\styles\images\kendoui.woff" />
+    <Content Include="kendo\styles\kendo.dataviz.mobile.min.css" />
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\binders\gravatar.js" />
@@ -112,6 +114,7 @@
     </Content>
     <Content Include="views\create-event.html" />
     <Content Include="views\create-game.html" />
+    <Content Include="scripts\viewModels\userProfileViewModel.js" />
     <Content Include="styles\images\icenium.png" />
     <Content Include="styles\images\icenium2x.png" />
     <Content Include="styles\images\location.png" />
