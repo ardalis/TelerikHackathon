@@ -128,6 +128,28 @@
         </div>
     </div>
 
+    <!--Create Game-->
+    <div id="create-game"
+         data-role="view"
+         data-title="Create Game"
+         data-model="app.viewModels.createGame">
+        <div class="view-content">
+            <form action="#" method="post" id="create-game-form">
+                <ul data-role="listview">
+                    <li>
+                        <label>
+                            Title
+                            <input type="text" data-bind="value: title" required data-required-msg="Game title is required." />
+                        </label>
+                    </li>
+                    <li class="button-row">
+                        <button type="submit" class="km-button" data-bind="click: onSaveTapped">Save</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
     <!--Layout-->
     <div data-role="layout" data-id="plain-layout">
 
