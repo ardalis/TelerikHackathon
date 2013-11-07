@@ -83,6 +83,7 @@
     <Content Include="data\weather.json" />
     <Content Include="scripts\viewModels\index.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
+    <Content Include="scripts\viewModels\userProfileViewModel.js" />
     <Content Include="styles\images\icenium.png" />
     <Content Include="styles\images\icenium2x.png" />
     <Content Include="styles\images\location.png" />

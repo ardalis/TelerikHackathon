@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -16,13 +16,14 @@
 <body>
     <!--Home-->
     <div id="tabstrip-home"
-        data-role="view"
-        data-title="Home"
-        data-layout="plain-layout">
+         data-role="view"
+         data-title="Home"
+         data-layout="plain-layout">
 
         <div class="view-content">
             <h1>GameKeeper</h1>
             <a data-role="button" href="#record-game">Record Game</a>
+            <a data-role="button" href="#my-profile">My Profile</a>
             <!--<p>
                 <img data-bind="attr: { src: testGravatarUrl }" />
                 Icenium&trade; enables you to build cross-platform device applications regardless of your
@@ -39,6 +40,7 @@
          data-model="app.viewModels.recordGame">
         <div class="view-content">
             <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+            <br />
             <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent">
                 <span data-bind="text: selectedEventTitle">Choose Event</span>
             </a>
@@ -56,6 +58,32 @@
                  data-template="choose-event-list-item-template"
                  data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"></div>
         </div>
+    </div>
+
+    <!-- User Profile Page -->
+    <div id="my-profile"
+         data-role="view"
+         data-title="My Profile"
+         data-model="app.viewModels.userProfile">
+
+        <div class="view-content">
+
+            <div>
+                <table>
+                    <tr>
+                        <td rowspan="2"><img data-bind="gravatar: email" /></td>
+                        <td><h3 data-bind="text: name"></h3></td>
+                    </tr>
+                    <tr>
+                        <td>Active since: <span id="activeSince" data-bind="text: createdAt"></span></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+
     </div>
 
     <!--Layout-->
