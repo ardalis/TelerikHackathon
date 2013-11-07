@@ -4,11 +4,13 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
     <script src="scripts/everlive.all.min.js"></script>
     <script src="scripts/md5.js"></script>
     <script src="scripts/require.js" data-main="scripts/app"></script>
@@ -73,8 +75,6 @@
 
         <div class="view-content">
 
-
-
             <table style="margin: 10px 5px; ">
                 <tr>
                     <td rowspan="2"><img data-bind="gravatar: email" data-gravatar-size="64" /></td>
@@ -85,19 +85,57 @@
                 </tr>
             </table>
 
-            <table style="width: 100%;">
+            <table style="width: 100%;" border="0">
                 <tr>
                     <td style="text-align: center; width: 50%;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentMatches"></h1><h5>Matches last 90 days</h5></td>
                     <td style="text-align: center;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentWins"></h1><h5>Wins last 90 days</h5></td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td align="center">
+                        <div id="my-topgames-chart"
+                             data-role="chart"
+                             data-title="Top Games"
+                             data-legend="{position: 'bottom'}"
+                             data-series-defaults="{type: 'pie'}"
+                             data-series="[{
+                             field: 'wins', categoryField: 'name', padding: 0}]"
+                             data-bind="source: topGames"></div>
+                    </td>
+                    <td align="center">
+                        <div id="my-winloss-chart"
+                             data-role="chart"
+                             data-title="Win / Loss Ratio"
+                             data-series-colors="[ 'green','red']"
+                             data-legend="{position: 'bottom'}"
+                             data-series-defaults="{type: 'pie'}"
+                             data-series="[{
+                             field: 'count', categoryField: 'name', padding: 0}]"
+                             data-bind="source: winLoss"></div>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td colspan="2">
+                        <b>Biggest Competitor:</b><span data-bind="text: frequentOpp"></span>  (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>Toughest to Beat:</b><span data-bind="text: lossOpp"></span>  (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <b>Easiest to Beat:</b><span data-bind="text: winOpp"></span>  (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
                     </td>
                 </tr>
 
             </table>
+
+            <div>
+                <h3>Achievements</h3>
+            </div>
 
         </div>
 
