@@ -45,11 +45,22 @@
         },
         onChoosePlayersTapped: function () {
             choosePlayersDialog.show(function (playerIds) {
-                vm.set("selectedPlayerIds", playerIds);
-                vm.set("selectedPlayers", datasources.players.data().filter(function (player) {
+                var selectedPlayerViewModels = datasources.players.data().filter(function (player) {
                     return playerIds.indexOf(player.id) >= 0;
-                }));
+                }).map(function (player) {
+                    return {
+                        Name: player.Name,
+                        Email: player.Email,
+                        IsWinner: false
+                    };
+                });
+                vm.set("selectedPlayerIds", playerIds);
+                vm.set("selectedPlayers", selectedPlayerViewModels);
             }, vm.get("selectedPlayerIds"));
+        },
+        onPlayerIconTapped: function (e) {
+            var tappedPlayer = e.target.kendoBindingTarget.source;
+            tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
         }
     });
 

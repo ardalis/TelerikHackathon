@@ -49,6 +49,10 @@ body, html {
     list-style-type: none;
 }
 
+.winner-list li[data-is-winner=true] {
+    -webkit-transform: rotate(45deg);
+}
+
 /* IMAGE STYLES*/
 .img {
 	background-image: url(../styles/images/icenium.png);
