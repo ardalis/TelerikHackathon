@@ -23,8 +23,20 @@
         sort: { field: "Name", dir: "asc" }
     });
 
+    var playersDataSource = new kendo.data.DataSource({
+        type: 'everlive',
+        transport: {
+            typeName: 'Players'
+        },
+        schema: {
+            model: { id: Everlive.idField }
+        },
+        sort: { field: "Name", dir: "asc" }
+    });
+
     return {
         events: eventsDataSource,
-        games: gamesDataSource
+        games: gamesDataSource,
+        players: playersDataSource
     };
 });

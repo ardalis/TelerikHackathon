@@ -1,21 +1,10 @@
-﻿define(["radio"], function (radio) {
+﻿define(["radio", "datasources"], function (radio, datasources) {
     "use strict";
-
-    var playerDataSource = new kendo.data.DataSource({
-        type: 'everlive',
-        transport: {
-            typeName: 'Players'
-        },
-        schema: {
-            model: { id: Everlive.idField }
-        },
-        sort: { field: "Name", dir: "asc" }
-    });
 
     var selectedCallback;
 
     var vm = kendo.observable({
-        dataSource: playerDataSource,
+        dataSource: datasources.players,
         selectedPlayers: [],
 
         show: function (callback, selectedPlayers) {
