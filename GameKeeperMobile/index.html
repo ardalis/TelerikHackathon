@@ -56,10 +56,10 @@
          data-model="app.viewModels.chooseEvent">
         <div class="view-content">
             <div data-role="listview"
-                 data-bind="source: eventsDataSource"
+                 data-bind="source: dataSource"
                  data-template="choose-event-list-item-template"
                  data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
-                 data-click="app.viewModels.chooseEvent.onEventSelected"></div>
+                 data-click="app.viewModels.chooseEvent.onItemSelected"></div>
         </div>
         <div data-role="footer">
             <div data-role="navbar">

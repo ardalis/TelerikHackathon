@@ -1,4 +1,4 @@
-﻿define(["radio"], function (radio) {
+﻿define(["viewModels/selectorViewModel"], function (selectorViewModel) {
     "use strict";
 
     var fakeEventsDataSource = new kendo.data.DataSource({
@@ -12,27 +12,5 @@
         })
     });
 
-    var selectedCallback;
-
-    var vm = kendo.observable({
-        eventFilter: "",
-        eventsDataSource: fakeEventsDataSource,
-
-        show: function (callback) {
-            selectedCallback = callback;
-            window.app.application.navigate("#choose-event");
-        },
-
-        onEventSelected: function (e) {
-            selectedCallback(e.dataItem);
-            window.app.application.navigate("#:back");
-        }
-    });
-
-    radio("event/created").subscribe(function (event) {
-        fakeEventsDataSource.add(event);
-        window.app.application.navigate("#:back");
-    });
-
-    return vm;
+    return selectorViewModel.create('event', fakeEventsDataSource);
 });
