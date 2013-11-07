@@ -73,18 +73,31 @@
 
         <div class="view-content">
 
-            <div>
-                <table>
-                    <tr>
-                        <td rowspan="2"><img data-bind="gravatar: email" /></td>
-                        <td><h3 data-bind="text: name"></h3></td>
-                    </tr>
-                    <tr>
-                        <td>Active since: <span id="activeSince" data-bind="text: createdAt"></span></td>
-                    </tr>
-                </table>
 
-            </div>
+
+            <table style="margin: 10px 5px; ">
+                <tr>
+                    <td rowspan="2"><img data-bind="gravatar: email" data-gravatar-size="64" /></td>
+                    <td align="left"><h3 data-bind="text: name" style="margin: 0px;"></h3></td>
+                </tr>
+                <tr>
+                    <td align="left">Active since: <span id="activeSince" data-bind="text: formattedCreateDate()"></span></td>
+                </tr>
+            </table>
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="text-align: center; width: 50%;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentMatches"></h1><h5>Matches last 90 days</h5></td>
+                    <td style="text-align: center;"><h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentWins"></h1><h5>Wins last 90 days</h5></td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                    </td>
+                </tr>
+
+            </table>
 
         </div>
 
