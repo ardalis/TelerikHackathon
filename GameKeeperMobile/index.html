@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8" />
-	<link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-	<link href="styles/main.css" rel="stylesheet" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
 
-	<script src="cordova.js"></script>
-	<script src="kendo/js/jquery.min.js"></script>
-	<script src="kendo/js/kendo.mobile.min.js"></script>
-
-	<script src="scripts/require.js" data-main="scripts/app"></script>
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/require.js" data-main="scripts/app"></script>
 </head>
 <body>
-	<!--Home-->
-	<div id="tabstrip-home"
-		data-role="view"
-		data-title="Home">
+    <!--Home-->
+    <div id="tabstrip-home"
+        data-role="view"
+        data-title="Home"
+        data-model="app.home.viewModel">
 
-		<div class="view-content">
-			<h1>Welcome!</h1>
-			<a id="skin-change" data-role="button" data-click="app.changeSkin">Flat</a>
-			<p>
-				Icenium&trade; enables you to build cross-platform device applications regardless of your
-					development platform by combining the convenience of a local development toolset with the
-					power and flexibility of the cloud.
-			</p>
-			<div class="img"></div>
-		</div>
-	</div>
+        <div class="view-content">
+            <h1>Welcome!</h1>
+            <p>
+                <img data-bind="attr: { src: testGravatarUrl }" />
+                Icenium&trade; enables you to build cross-platform device applications regardless of your
+                    development platform by combining the convenience of a local development toolset with the
+                    power and flexibility of the cloud.
+            </p>
+            <div class="img"></div>
+        </div>
+    </div>
 
-	<!--Layout-->
-	<div data-role="layout" data-id="tabstrip-layout">
+    <!--Layout-->
+    <div data-role="layout" data-id="tabstrip-layout">
 
-		<!--Header-->
-		<div data-role="header">
-			<div data-role="navbar">
-				<span data-role="view-title"></span>
-			</div>
-		</div>
+        <!--Header-->
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </div>
 
-		<!--Footer-->
-		<div data-role="footer">
-			<div data-role="tabstrip">
-				<a href="#tabstrip-home" data-icon="home">Home</a>
-				<a href="#tabstrip-login" data-icon="contacts">Login</a>
-				<a href="#tabstrip-location" data-icon="search">Location</a>
-				<a href="#tabstrip-weather" data-icon="globe">Weather</a>
-			</div>
-		</div>
-	</div>
+        <!--Footer-->
+        <div data-role="footer">
+            <div data-role="tabstrip">
+                <a href="#tabstrip-home" data-icon="home">Home</a>
+                <a href="#tabstrip-login" data-icon="contacts">Login</a>
+                <a href="#tabstrip-location" data-icon="search">Location</a>
+                <a href="#tabstrip-weather" data-icon="globe">Weather</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
