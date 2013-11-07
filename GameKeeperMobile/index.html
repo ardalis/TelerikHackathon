@@ -59,6 +59,32 @@
                  data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
                  data-click="app.viewModels.recordGame.onEventSelected"></div>
         </div>
+        <div data-role="footer">
+            <div data-role="navbar">
+                <a href="#create-event">Create Event</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Create Event-->
+    <div id="create-event"
+         data-role="view"
+         data-title="Create Event"
+         data-model="app.viewModels.createEvent">
+        <div class="view-content">
+            <ul data-role="listview" data-style="inset" data-type="group">
+                <li>
+                    <ul class="km-list">
+                        <li>
+                            <label>
+                                Title
+                                <input data-bind="value: title" />
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <!--Layout-->

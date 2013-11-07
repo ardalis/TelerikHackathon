@@ -1,12 +1,15 @@
 ﻿define([
-    "viewModels/recordGameViewModel"
+    "viewModels/recordGameViewModel",
+    "viewModels/createEventViewModel"
 ], function (
-    recordGameViewModel
+    recordGameViewModel,
+    createEventViewModel
 ) {
     "use strict";
 
     return {
         recordGame: recordGameViewModel,
-        chooseEvent: kendo.observable({})
+        chooseEvent: kendo.observable({}),
+        createEvent: createEventViewModel
     };
 });

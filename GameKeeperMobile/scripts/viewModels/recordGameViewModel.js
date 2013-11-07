@@ -1,11 +1,13 @@
-﻿define([], function () {
+﻿define(["radio"], function (radio) {
     "use strict";
 
     var fakeEventsDataSource = new kendo.data.DataSource({
         data: _.range(1, 12).map(function (i) {
             return {
                 id: kendo.guid(),
-                title: kendo.format("BOGA {0}/{0}", i)
+                title: kendo.format("BOGA {0}/{0}", i),
+                location: "",
+                date: ""
             };
         })
     });
@@ -25,5 +27,10 @@
             window.app.application.navigate("#:back");
         }
     });
+
+    radio("event/created").subscribe(function (createEventViewModel) {
+        
+    });
+
     return vm;
 });
