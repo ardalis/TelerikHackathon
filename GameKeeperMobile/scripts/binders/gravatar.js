@@ -5,7 +5,7 @@
         var emailHash = md5(email.trim().toLowerCase()).toString();
         size = size || 32;
         return kendo.format("http://www.gravatar.com/avatar/{0}?s={1}", emailHash, size);
-    }
+    };
 
     kendo.data.binders.gravatar = kendo.data.Binder.extend({
         refresh: function () {

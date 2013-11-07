@@ -1,11 +1,13 @@
 ﻿define([
     "radio",
     "viewModels/chooseEventViewModel",
-    "viewModels/chooseGameViewModel"
+    "viewModels/chooseGameViewModel",
+    "viewModels/choosePlayersViewModel"
 ], function (
     radio,
     chooseEventDialog,
-    chooseGameDialog
+    chooseGameDialog,
+    choosePlayersDialog
 ) {
     "use strict";
 
@@ -35,6 +37,11 @@
         onChooseGameTapped: function () {
             chooseGameDialog.show(function (game) {
                 vm.set("selectedGame", game);
+            });
+        },
+        onChoosePlayersTapped: function () {
+            choosePlayersDialog.show(function (players) {
+                // hooray!
             });
         }
     });

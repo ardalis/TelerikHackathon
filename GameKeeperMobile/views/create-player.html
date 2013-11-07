@@ -1,0 +1,29 @@
+﻿<div id="create-game"
+        data-role="view"
+        data-title="Create Player"
+        data-model="app.viewModels.createPlayer">
+    <div class="view-content">
+        <form action="#" method="post" id="create-player-form">
+            <ul data-role="listview">
+                <li>
+                    <label>
+                        Name
+                        <input type="text" data-bind="value: name" required data-required-msg="Player name is required." />
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        Email
+                        <input type="email" data-bind="value: email" required data-required-msg="Player email is required" />
+                    </label>
+                </li>
+                <li>
+                    <img data-bind="gravatar: email" data-gravatar-size="48" />
+                </li>
+                <li class="button-row">
+                    <button type="submit" class="km-button" data-bind="click: onSaveTapped">Save</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
