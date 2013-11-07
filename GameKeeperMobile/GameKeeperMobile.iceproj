@@ -74,10 +74,15 @@
     <Content Include="scripts\md5.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="scripts\radio.min.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="scripts\require.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="data\weather.json" />
+    <Content Include="scripts\viewModels\index.js" />
+    <Content Include="scripts\viewModels\recordGameViewModel.js" />
     <Content Include="styles\images\icenium.png" />
     <Content Include="styles\images\icenium2x.png" />
     <Content Include="styles\images\location.png" />
@@ -117,6 +122,7 @@
     <Folder Include="kendo\styles\images\" />
     <Folder Include="Plugins\" />
     <Folder Include="scripts\" />
+    <Folder Include="scripts\viewModels\" />
     <Folder Include="styles\" />
     <Folder Include="styles\images\" />
   </ItemGroup>

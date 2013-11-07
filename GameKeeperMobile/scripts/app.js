@@ -5,7 +5,18 @@ Application Name: GameKeeper
 API Key: syRNNMNu6044zxPT
 
 **/
-require(["gravatar"], function (gravatar) {
+require.config({
+    paths: {
+        radio: "radio.min"
+    },
+    shim: {
+        radio: {
+            exports: "radio"
+        }
+    }
+});
+
+require(["viewModels/index", "radio"], function (viewModels, radio) {
     "use strict";
 
     var global = window,
@@ -18,15 +29,11 @@ require(["gravatar"], function (gravatar) {
         navigator.splashscreen.hide();
     }, false);
 
-    app.home = {
-        viewModel: kendo.observable({
-            testGravatarUrl: gravatar.getImageUrlForEmail("Chris.wagner@telerik.com")
-        })
-    };
+
+    app.viewModels = viewModels;
 
     app.application = new kendo.mobile.Application(document.body, {
-        layout: "tabstrip-layout",
-        statusBarStyle: statusBarStyle,
-        skin: "flat"
+        layout: "default-layout",
+        statusBarStyle: statusBarStyle
     });
 });
