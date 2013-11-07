@@ -29,7 +29,6 @@ require(["viewModels/index", "radio"], function (viewModels, radio) {
         navigator.splashscreen.hide();
     }, false);
 
-
     app.viewModels = viewModels;
 
     app.application = new kendo.mobile.Application(document.body, {

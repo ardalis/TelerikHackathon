@@ -19,7 +19,11 @@
             return vm.hasSelectedEvent() ? vm.get("selectedEvent").title : "";
         },
         eventFilter: "",
-        eventsDataSource: fakeEventsDataSource
+        eventsDataSource: fakeEventsDataSource,
+        onEventSelected: function (e) {
+            vm.set("selectedEvent", e.dataItem);
+            window.app.application.navigate("#:back");
+        }
     });
     return vm;
 });

@@ -54,7 +54,8 @@
             <div data-role="listview"
                  data-bind="source: eventsDataSource"
                  data-template="choose-event-list-item-template"
-                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"></div>
+                 data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
+                 data-click="app.viewModels.recordGame.onEventSelected"></div>
         </div>
     </div>
 
