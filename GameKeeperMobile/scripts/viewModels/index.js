@@ -9,7 +9,9 @@
 
     return {
         recordGame: recordGameViewModel,
-        chooseEvent: kendo.observable({}),
-        createEvent: createEventViewModel
+        createEvent: createEventViewModel,
+        home: kendo.observable({
+            gravatarEmail: 'Chris.Wagner@telerik.com'
+        })
     };
 });
