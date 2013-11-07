@@ -312,6 +312,10 @@ body, html {
 	opacity: 0.3;
 }
 
+.home-bg {
+    background: url(home-logo.svg);
+}
+
 /* RETINA DISPLAY STYLES*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
 	.img {
