@@ -20,6 +20,7 @@
 
         radio(type + "/created").subscribe(function (item) {
             dataSource.add(item);
+            dataSource.sync();
             window.app.application.navigate("#:back");
         });
 

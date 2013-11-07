@@ -1,4 +1,4 @@
 ﻿define([], function () {
     "use strict";
-    return new Everlive('W1286lVOH0DXYZ');
+    return new Everlive('syRNNMNu6044zxPT');
 });

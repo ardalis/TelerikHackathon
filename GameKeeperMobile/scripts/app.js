@@ -19,7 +19,7 @@ require.config({
     }
 });
 
-require(["viewModels/index", "radio", "binders/gravatar"], function (viewModels, radio) {
+require(["viewModels/index", "radio", "el", "binders/gravatar"], function (viewModels, radio, el) {
     "use strict";
 
     var global = window,
@@ -27,6 +27,8 @@ require(["viewModels/index", "radio", "binders/gravatar"], function (viewModels,
         app = global.app = global.app || {},
         os = kendo.support.mobileOS,
         statusBarStyle = os.ios && os.flatVersion >= 700 ? "black-translucent" : "black";
+
+    global.reqwest = global.reqwest || reqwest;
 
     document.addEventListener('deviceready', function () {
         navigator.splashscreen.hide();
