@@ -12,6 +12,9 @@ require.config({
     shim: {
         radio: {
             exports: "radio"
+        },
+        md5: {
+            exports: "CryptoJS.MD5"
         }
     }
 });
