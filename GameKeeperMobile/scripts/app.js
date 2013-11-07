@@ -16,7 +16,7 @@ require.config({
     }
 });
 
-require(["gravatar", "radio"], function (gravatar, radio) {
+require(["viewModels/index", "radio"], function (viewModels, radio) {
     "use strict";
 
     var global = window,
@@ -29,11 +29,8 @@ require(["gravatar", "radio"], function (gravatar, radio) {
         navigator.splashscreen.hide();
     }, false);
 
-    app.home = {
-        viewModel: kendo.observable({
-            testGravatarUrl: gravatar.getImageUrlForEmail("Chris.wagner@telerik.com")
-        })
-    };
+
+    app.viewModels = viewModels;
 
     app.application = new kendo.mobile.Application(document.body, {
         layout: "default-layout",

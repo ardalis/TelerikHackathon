@@ -18,7 +18,6 @@
     <div id="tabstrip-home"
         data-role="view"
         data-title="Home"
-        data-model="app.home.viewModel"
         data-layout="plain-layout">
 
         <div class="view-content">
@@ -36,16 +35,21 @@
     <!--Record Game-->
     <div id="record-game"
          data-role="view"
-         data-title="Record Game Result">
+         data-title="Record Game Result"
+         data-model="app.viewModels.recordGame">
         <div class="view-content">
-            <a data-role="button" href="#choose-event">Choose Event</a>
+            <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+            <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent">
+                <span data-bind="text: selectedEventTitle">Choose Event</span>
+            </a>
         </div>
     </div>
 
     <!--Choose Event-->
     <div id="choose-event"
          data-role="view"
-         data-title="Choose Event">
+         data-title="Choose Event"
+         data-model="app.viewModels.chooseEvent">
         <div class="view-content">
             
         </div>
