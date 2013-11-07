@@ -92,6 +92,10 @@
     <Content Include="scripts\viewModels\index.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
     <Content Include="scripts\viewModels\selectorViewModel.js" />
+    <Content Include="views\choose-event.html" />
+    <Content Include="views\choose-game.html" />
+    <Content Include="views\create-event.html" />
+    <Content Include="views\create-game.html" />
     <Content Include="styles\images\icenium.png" />
     <Content Include="styles\images\icenium2x.png" />
     <Content Include="styles\images\location.png" />
@@ -115,6 +119,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="views\record-game.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Resources\" />
@@ -135,6 +140,7 @@
     <Folder Include="scripts\viewModels\" />
     <Folder Include="styles\" />
     <Folder Include="styles\images\" />
+    <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
   <!--

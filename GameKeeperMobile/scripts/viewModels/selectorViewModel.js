@@ -9,7 +9,7 @@
 
             show: function (callback) {
                 selectedCallback = callback;
-                window.app.application.navigate("#choose-" + type);
+                window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 
             onItemSelected: function (e) {

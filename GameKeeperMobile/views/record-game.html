@@ -1,0 +1,17 @@
+﻿<div id="record-game"
+        data-role="view"
+        data-title="Record Game Result"
+        data-model="app.viewModels.recordGame">
+    <div class="view-content">
+        <ul data-role="listview">
+            <li>
+                <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+                <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="visible: hasSelectedEvent"><span data-bind="text: selectedEventTitle"></span></a>
+            </li>
+            <li>
+                <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="invisible: hasSelectedGame">Choose Game</a>
+                <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="visible: hasSelectedGame"><span data-bind="text: selectedGameTitle"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
