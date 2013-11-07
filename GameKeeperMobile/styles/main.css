@@ -42,6 +42,13 @@ body, html {
     margin: 0;
 }
 
+.winner-list li {
+    padding: 3px;
+    margin: 0;
+    display: inline-block;
+    list-style-type: none;
+}
+
 /* IMAGE STYLES*/
 .img {
 	background-image: url(../styles/images/icenium.png);
