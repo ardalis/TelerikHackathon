@@ -9,18 +9,20 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-
+    <script src="scripts/md5.js"></script>
     <script src="scripts/require.js" data-main="scripts/app"></script>
 </head>
 <body>
     <!--Home-->
     <div id="tabstrip-home"
         data-role="view"
-        data-title="Home">
+        data-title="Home"
+        data-model="app.home.viewModel">
 
         <div class="view-content">
             <h1>Welcome!</h1>
             <p>
+                <img data-bind="attr: { src: testGravatarUrl }" />
                 Icenium&trade; enables you to build cross-platform device applications regardless of your
                     development platform by combining the convenience of a local development toolset with the
                     power and flexibility of the cloud.
