@@ -68,6 +68,7 @@
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\binders\gravatar.js" />
+    <Content Include="scripts\el.js" />
     <Content Include="scripts\everlive.all.min.js">
       <SubType>Content</SubType>
     </Content>
@@ -75,6 +76,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="scripts\md5.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\reqwest.min.js">
       <SubType>Content</SubType>
     </Content>
     <Content Include="scripts\viewModels\chooseEventViewModel.js">

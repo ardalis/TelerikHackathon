@@ -8,7 +8,8 @@
         },
         schema: {
             model: { id: Everlive.idField }
-        }
+        },
+        sort: { field: "Name", dir: "asc" }
     });
 
     //var fakeEventsDataSource = new kendo.data.DataSource({
