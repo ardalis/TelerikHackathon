@@ -14,6 +14,7 @@
     var vm = kendo.observable({
         selectedEvent: null,
         selectedGame: null,
+        selectedPlayers: [],
 
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
@@ -40,8 +41,10 @@
             });
         },
         onChoosePlayersTapped: function () {
-            choosePlayersDialog.show(function (players) {
+            choosePlayersDialog.show(function (playerIds) {
                 // hooray!
+                vm.set("selectedPlayers", playerIds);
+                console.log(playerIds);
             });
         }
     });

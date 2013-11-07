@@ -34,8 +34,6 @@
     </div>
 
     <div data-role="layout" data-id="default-layout">
-
-        <!--Header-->
         <div data-role="header">
             <div data-role="navbar">
                 <a class="nav-button" data-align="left" data-role="backbutton"></a>
@@ -60,6 +58,10 @@
             <div class="player-email" data-bind="text: Email"></div>
             <input type="checkbox" data-bind="value: Id, checked: selectedPlayers" />
         </label>
+    </script>
+
+    <script id="game-player-list-item-template" type="text/x-kendo-template">
+        #: data #
     </script>
 </body>
 </html>

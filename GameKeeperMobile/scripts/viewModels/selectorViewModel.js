@@ -12,8 +12,12 @@
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 
+            complete: function (result) {
+                selectedCallback(result);
+            },
+
             onItemSelected: function (e) {
-                selectedCallback(e.dataItem);
+                vm.complete(e.dataItem);
                 window.app.application.navigate("#:back");
             }
         }, extension || {}));
