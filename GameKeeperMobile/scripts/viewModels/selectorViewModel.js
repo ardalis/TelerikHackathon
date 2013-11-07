@@ -1,10 +1,10 @@
 ﻿define(["radio"], function (radio) {
     "use strict";
 
-    var createSelectorViewModel = function(type, dataSource) {
+    var createSelectorViewModel = function(type, dataSource, extension) {
         var selectedCallback;
 
-        var vm = kendo.observable({
+        var vm = kendo.observable(_.extend({
             dataSource: dataSource,
 
             show: function (callback) {
@@ -16,7 +16,7 @@
                 selectedCallback(e.dataItem);
                 window.app.application.navigate("#:back");
             }
-        });
+        }, extension || {}));
 
         radio(type + "/created").subscribe(function (item) {
             dataSource.add(item);

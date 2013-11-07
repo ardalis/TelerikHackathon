@@ -12,6 +12,9 @@
         sort: { field: "Name", dir: "asc" }
     });
 
-    var vm = selectorViewModel.create('players', gameDataSource);
+    var vm = selectorViewModel.create('players', gameDataSource, {
+        selectedPlayers: [],
+        onItemSelected: function () { }
+    });
     return vm;
 });
