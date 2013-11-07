@@ -16,7 +16,7 @@ require.config({
     }
 });
 
-require(["viewModels/index", "radio"], function (viewModels, radio) {
+require(["viewModels/index", "radio", "binders/gravatar"], function (viewModels, radio) {
     "use strict";
 
     var global = window,
