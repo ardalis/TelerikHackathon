@@ -1,21 +1,8 @@
-﻿define(["radio"], function (radio) {
+﻿define(["radio", "viewModels/chooseEventViewModel"], function (radio, chooseEventDialog) {
     "use strict";
-
-    var fakeEventsDataSource = new kendo.data.DataSource({
-        data: _.range(1, 3).map(function (i) {
-            return {
-                id: kendo.guid(),
-                title: kendo.format("BOGA {0}/{0}", i),
-                location: "",
-                date: ""
-            };
-        })
-    });
 
     var vm = kendo.observable({
         selectedEvent: null,
-        eventFilter: "",
-        eventsDataSource: fakeEventsDataSource,
 
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
@@ -24,9 +11,10 @@
             return vm.hasSelectedEvent() ? vm.get("selectedEvent").title : "";
         },
 
-        onEventSelected: function (e) {
-            vm.set("selectedEvent", e.dataItem);
-            window.app.application.navigate("#:back");
+        onChooseEventTapped: function () {
+            chooseEventDialog.show(function (event) {
+                vm.set("selectedEvent", event);
+            });
         }
     });
 

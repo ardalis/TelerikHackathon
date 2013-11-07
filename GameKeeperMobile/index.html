@@ -42,8 +42,8 @@
         <div class="view-content">
             <ul data-role="listview">
                 <li>
-                    <a data-role="button" href="#choose-event" data-bind="invisible: hasSelectedEvent">Choose Event</a>
-                    <a data-role="button" href="#choose-event" data-bind="visible: hasSelectedEvent"><span data-bind="text: selectedEventTitle"></span></a>
+                    <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="invisible: hasSelectedEvent">Choose Event</a>
+                    <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="visible: hasSelectedEvent"><span data-bind="text: selectedEventTitle"></span></a>
                 </li>
             </ul>
         </div>
@@ -53,13 +53,13 @@
     <div id="choose-event"
          data-role="view"
          data-title="Choose Event"
-         data-model="app.viewModels.recordGame">
+         data-model="app.viewModels.chooseEvent">
         <div class="view-content">
             <div data-role="listview"
                  data-bind="source: eventsDataSource"
                  data-template="choose-event-list-item-template"
                  data-filterable="{ field: 'title', ignoreCase: true, operator: 'contains' }"
-                 data-click="app.viewModels.recordGame.onEventSelected"></div>
+                 data-click="app.viewModels.chooseEvent.onEventSelected"></div>
         </div>
         <div data-role="footer">
             <div data-role="navbar">
