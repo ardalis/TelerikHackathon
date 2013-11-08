@@ -141,6 +141,7 @@
     <Content Include="styles\images\top-logo.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="styles\km-overrides.css" />
     <Content Include="views\choose-event.html" />
     <Content Include="views\choose-game.html" />
     <Content Include="views\choose-players.html">
