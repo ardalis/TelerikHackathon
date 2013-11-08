@@ -37,7 +37,8 @@
                     name: "Times Played",
                     categoryField: 'DateCreated',
                     field: 'DateCreated',
-                    aggregate: "count"
+                    aggregate: "count",
+                    color: "#016C97"
                 }
             ],
             categoryAxis: {

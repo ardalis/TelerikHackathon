@@ -34,7 +34,7 @@
 
         onShow: function (e) {
             console.log(e.view.params.playerid);
-            var playerId = (e.view.params.playerid) ? parseInt(e.view.params.playerid,10) : 5;
+            var playerId = (e.view.params.playerid) ? parseInt(e.view.params.playerid,10) : 8;
 
             var playerTable = azureClient.getTable('player');
             var winTable = azureClient.getTable('matchwinner');

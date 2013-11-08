@@ -36,7 +36,8 @@
                 position: "bottom"
             },
             seriesDefaults: {
-                type: "line"
+                type: "line",
+                colors: ['#66BC46', '#74163F']
             },
             dateField: "DateCreated",
             series: [
@@ -44,10 +45,12 @@
                     field: "Win",
                     name: "Wins",
                     categoryField: 'DateCreated',
+                    color: '#66BC46'
                 }, {
                     field: "Loss",
                     name: "Losses",
-                    categoryField: 'DateCreated'
+                    categoryField: 'DateCreated',
+                    color: 'red'
                 }
             ],
             valueAxis: {
