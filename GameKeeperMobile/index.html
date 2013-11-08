@@ -26,10 +26,10 @@
          data-model="app.viewModels.home">
 
         <div class="view-content home-buttons-container">
-            <p><a data-role="button" href="views/userProfile.html" class="btn start-btn-home">Get Started</a></p>
-            <p><a data-role="button" href="views/record-game.html" class="btn cta record-btn-home">Record Game Played</a></p>
-            <p><a data-role="button" href="views/record-game.html" class="btn leaderboard-btn-home">Leaderboards</a></p>
-            <p><a data-role="button" href="views/record-game.html" class="btn reports-btn-home">Reports</a></p>
+            <p><a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a></p>
+            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn cta record-btn-home">Record Game Played</a></p>
+            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn leaderboard-btn-home">Leaderboards</a></p>
+            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn reports-btn-home">Reports</a></p>
 
             <!--<p>
                 <img data-bind="attr: { src: testGravatarUrl }" />
@@ -105,8 +105,14 @@
         </li>
     </script>
     <script>
-        function changeTitle() {
-            $("#navbar").data("kendoMobileNavBar").title("MyCustomTitle");
+        function changeTitle(e) {
+            var fromPage = e.view.params;
+            if (fromPage != undefined) {
+                var kmnb = $("#navbar").data("kendoMobileNavBar");
+                if (kmnb != undefined) {
+                    kmnb.title(fromPage.from);
+                }
+            }
         }
     </script>
 
