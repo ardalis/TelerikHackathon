@@ -359,6 +359,10 @@ body, html {
     margin-top: 12px;
     float: left;
 }
+.muted-text {
+    color: #E6E6E5 ! important;
+    font-style: italic;
+}
 .btn-edit-square {
     background: #016C97;
     width: 48px;

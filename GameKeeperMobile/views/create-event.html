@@ -25,7 +25,7 @@
                     </label>
                 </li>
                 <li class="current-location" data-bind="invisible: hasCandidateLocations">
-                    <button type="button" class="km-button" data-bind="click: onUseCurrentLocationTapped">Use Current Location</button>
+                    <button type="button" class="km-button btn blue km-widget km-state-active" data-bind="click: onUseCurrentLocationTapped">Use Current Location</button>
                 </li>
                 <li class="current-location" data-bind="visible: hasCandidateLocations">
                     <button type="button" class="km-button" data-bind="click: onDoNotUseCurrentLocationTapped">Don't Use Current Location</button>
@@ -37,7 +37,7 @@
                     </label>
                 </li>
                 <li class="button-row">
-                    <button type="submit" class="km-button" data-bind="click: onSaveTapped">Save</button>
+                    <button type="submit" class="km-button btn cta km-widget km-state-active" data-bind="click: onSaveTapped">Save</button>
                 </li>
             </ul>
         </form>
