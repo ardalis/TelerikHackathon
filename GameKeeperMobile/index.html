@@ -56,7 +56,7 @@
 
     <div data-role="layout" data-id="sub-pages">
         <div data-role="header" class="header">
-            <div data-role="navbar" style="background-color: #193B67">
+            <div data-role="navbar" id="navbar" style="background-color: #193B67">
                 <a data-align="left" style="color: white; background-color: #193B67" data-role="backbutton"></a>
 <!--                <h1 class="top-logo">J</h1>-->
                 <span style="color:white" data-role="view-title"></span>
@@ -104,5 +104,11 @@
             <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="position-left" />
         </li>
     </script>
+    <script>
+        function changeTitle() {
+            $("#navbar").data("kendoMobileNavBar").title("MyCustomTitle");
+        }
+    </script>
+
 </body>
 </html>
