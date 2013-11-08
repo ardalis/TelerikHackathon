@@ -69,9 +69,11 @@
                 vm.set("frequentOppWins", nPlayers[0].Wins);
                 vm.set("frequentOppLosses", nPlayers[0].Losses);
                 vm.set("lossOpp", nPlayers[1].Name);
+                vm.set("lossOppEmail", nPlayers[1].EmailAddress);
                 vm.set("lossOppWins", nPlayers[1].Wins);
                 vm.set("lossOppLosses", nPlayers[1].Losses);
                 vm.set("winOpp", nPlayers[2].Name);
+                vm.set("winOppEmail", nPlayers[2].EmailAddress);
                 vm.set("winOppWins", nPlayers[2].Wins);
                 vm.set("winOppLosses", nPlayers[2].Losses);
 
