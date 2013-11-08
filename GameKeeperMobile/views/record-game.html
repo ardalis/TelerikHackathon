@@ -24,10 +24,12 @@
                 Game
                 <ul>
                     <li class="select-options-btn">
-                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="invisible: hasSelectedGame">
+                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" 
+                           data-bind="invisible: hasSelectedGame">
                             <span class="btn-text muted-text">Choose Game</span><i class="fa fa-pencil btn-edit-square"></i>
                         </a>
-                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="visible: hasSelectedGame" class="selected-option">
+                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" 
+                           data-bind="visible: hasSelectedGame" class="selected-option">
                             <img data-bind="attr: { src: selectedGameBoxImageUrl }" width="48" height="48" />
                             <span data-bind="text: selectedGameTitle"></span>
                         </a>
@@ -38,8 +40,15 @@
                 Players
                 <ul>
                     <li class="select-options-btn">
-                        <ul class="winner-list" data-role="kendo.ui.ListView" data-bind="source: selectedPlayers" data-template="game-player-list-item-template"></ul>
-                        <a data-role="button" class="edit-player-list position-right" data-click="app.viewModels.recordGame.onChoosePlayersTapped"><i class="fa fa-pencil btn-edit-square"></i></a>
+                        <ul class="winner-list" data-role="kendo.ui.ListView" 
+                            data-bind="source: selectedPlayers" data-template="game-player-list-item-template"></ul>
+                        <a data-role="button" data-click="app.viewModels.recordGame.onChoosePlayersTapped" data-bind="invisible: hasSelectedPlayers">
+                            <span class="btn-text muted-text">Choose Player</span><i class="fa fa-pencil btn-edit-square"></i>
+                        </a>
+                        <a data-role="button" class="edit-player-list position-right" data-bind="visible: hasSelectedPlayers"
+                           data-click="app.viewModels.recordGame.onChoosePlayersTapped">
+                            <i class="fa fa-pencil btn-edit-square"></i>
+                        </a>
                     </li>
                 <p class="smaller" style="margin-top: 0;">Tap the winner(s)</p>
                 </ul>

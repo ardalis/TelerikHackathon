@@ -12,7 +12,7 @@
     choosePlayersDialog,
     datasources,
     azureClient
-) {
+    ) {
     "use strict";
 
     var vm = kendo.observable({
@@ -30,6 +30,9 @@
 
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
+        },
+        hasSelectedPlayers: function () {
+            return vm.get("selectedPlayers").length !== 0;
         },
         selectedEventTitle: function () {
             return vm.hasSelectedEvent() ? vm.get("selectedEvent").Name : "";
@@ -66,7 +69,9 @@
                 var selectedPlayerViewModels = datasources.players.data().filter(function (player) {
                     return playerIds.indexOf(player.ID) >= 0;
                 }).map(function (player) {
-                    return vm.get("selectedPlayers").filter(function (pvm) { return pvm.ID === player.ID; })[0] || {
+                    return vm.get("selectedPlayers").filter(function (pvm) {
+                        return pvm.ID === player.ID;
+                    })[0] || {
                         ID: player.ID,
                         Name: player.Name,
                         EmailAddress: player.EmailAddress,
@@ -81,6 +86,9 @@
             var tappedPlayer = e.target.kendoBindingTarget.source;
             tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
         },
+        onCancelButtonTapped: function(e) {
+            vm.clear();
+        },
         onSaveButtonTapped: function (e) {
             azureClient.getTable('match').insert({
                 GameID: vm.selectedGame.id,
@@ -90,14 +98,18 @@
                 // HACK: here be dragons.
                 var winnersTable = azureClient.getTable('matchwinner');
                 var losersTable = azureClient.getTable('matchloser');
-                var saveWinners = vm.selectedPlayers.filter(function (player) { return player.IsWinner; }).map(function (player) {
+                var saveWinners = vm.selectedPlayers.filter(function (player) {
+                    return player.IsWinner;
+                }).map(function (player) {
                     return winnersTable.insert({
                         MatchID: match.id,
                         PlayerID: player.ID,
                         Score: 1
                     });
                 });
-                var saveLosers = vm.selectedPlayers.filter(function (player) { return !player.IsWinner; }).map(function (player) {
+                var saveLosers = vm.selectedPlayers.filter(function (player) {
+                    return !player.IsWinner;
+                }).map(function (player) {
                     return losersTable.insert({
                         MatchID: match.id,
                         PlayerID: player.ID,
