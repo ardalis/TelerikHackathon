@@ -107,7 +107,37 @@
     <Content Include="scripts\viewModels\index.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
     <Content Include="scripts\viewModels\selectorViewModel.js" />
+    <Content Include="styles\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="styles\images\home-logo%402px.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\home-logo.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="styles\images\home-logo.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\logo-icon-and-text-only%402px.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\logo-icon-and-text-only.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\logo-icon-and-text-only.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\logo-star.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\top-logo%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="styles\images\top-logo.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\choose-event.html" />
@@ -159,6 +189,7 @@
     <Folder Include="kendo\js\" />
     <Folder Include="kendo\styles\" />
     <Folder Include="kendo\styles\images\" />
+    <Folder Include="fonts\" />
     <Folder Include="Plugins\" />
     <Folder Include="scripts\" />
     <Folder Include="scripts\binders\" />

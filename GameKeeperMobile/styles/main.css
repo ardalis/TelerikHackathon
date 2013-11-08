@@ -168,9 +168,77 @@ body, html {
 }
 
 .home-bg {
-    background: url(home-logo.svg);
+    background: #193B67 url(images/home-logo.png) no-repeat center -10px;
+    background-size: 320px 568px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
 }
+.home-buttons-container {
+    margin-top: 98%;
+}
+.home-buttons-container p{
+    margin-top: .75em;
+    margin-bottom: .75em;
+}
+.btn {
+    display: block;
+    background: white;
+    text-align: center;
+    color: transparent;
+}
+.km-ios7 .km-button {
+    background: white;
+}
+    .btn span {
+        font-size: 20px;
+        color: black;
+    }
+    .btn.cta {
+        background: #66BC46;
+        color: transparent;
+        line-height: 2.5em;
+    }
+    .btn.cta span {
+        color: White;
+    }
+.record-btn-home:before {
+    content: "\F040";
+    padding-right: 8px;
+    font-size: 25px;
+    color: white;
+    font-family: "FontAwesome";
+}
+.leaderboard-btn-home:before {
+    content: "\F091";
+    padding-right: 8px;
+    font-size: 25px;
+    color: #016c97;
+    font-family: "FontAwesome";
+}
+.reports-btn-home:before {
+    content: "\F080";
+    padding-right: 8px;
+    font-size: 25px;
+    color: #016c97;
+    font-family: "FontAwesome";
+}
+
+.top-logo {
+    background: url(images/top-logo.png) no-repeat left -8px;
+    background-size: 202px 54px;
+    text-indent: -10000px;
+}
+.header div[data-role="navbar"] {
+    background: #193B67;
+}
+
 
 /* RETINA DISPLAY STYLES*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+    .top-logo {
+        background: url(images/top-logo@2x.png) no-repeat left top;
+        background-size: 202px 54px;
+    }
 }

@@ -6,6 +6,7 @@
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/font-awesome.min.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
@@ -17,20 +18,17 @@
 </head>
 <body>
     <!--Home-->
-    <div id="tabstrip-home"
+    <div id="home" class="home-bg"
          data-role="view"
          data-title="Home"
          data-layout="plain-layout"
          data-model="app.viewModels.home">
 
-        <div class="view-content home-bg">
-            <h1>GameKeeper</h1>
-
-            <a data-role="button" href="views/record-game.html">Record Game</a>
-
-            <a data-role="button" href="#my-profile">My Profile</a>
-
-            <img data-bind="gravatar: gravatarEmail" data-gravatar-size="64" />
+        <div class="view-content home-buttons-container">
+            <p><a data-role="button" href="#my-profile" class="btn start-btn-home">Get Started</a></p>
+            <p><a data-role="button" href="views/record-game.html" class="btn cta record-btn-home">Record Game Played</a></p>
+            <p><a data-role="button" href="views/record-game.html" class="btn leaderboard-btn-home">Leaderboards</a></p>
+            <p><a data-role="button" href="views/record-game.html" class="btn reports-btn-home">Reports</a></p>
 
             <!--<p>
                 <img data-bind="attr: { src: testGravatarUrl }" />
@@ -126,6 +124,14 @@
             <div data-role="navbar">
                 <a class="nav-button" data-align="left" data-role="backbutton"></a>
                 <span data-role="view-title"></span>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="layout" data-id="logo-layout">
+        <div data-role="header" class="header">
+            <div data-role="navbar">
+                <h1 class="top-logo">GameKeeper</h1>
             </div>
         </div>
     </div>

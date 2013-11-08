@@ -1,7 +1,8 @@
 ﻿<div id="record-game"
         data-role="view"
         data-title="Record Game Result"
-        data-model="app.viewModels.recordGame">
+        data-model="app.viewModels.recordGame"
+        data-layout="logo-layout">
     <div class="view-content">
         <ul data-role="listview">
             <li>
@@ -19,6 +20,9 @@
             <li>
                 <ul data-bind="source: selectedPlayers" data-template="game-player-list-item-template">
                 </ul>
+            </li>
+            <li>
+                <p><a data-role="button" href="views/record-game.html" class="btn cta">Save Game</a></p>
             </li>
         </ul>
     </div>
