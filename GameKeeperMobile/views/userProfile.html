@@ -11,7 +11,7 @@
         <table style="margin: 10px 5px; ">
             <tr>
                 <td rowspan="2">
-                    <img data-bind="gravatar: email" data-gravatar-size="64" />
+                    <img data-bind="gravatar: email" data-gravatar-size="64" width="64" height="64" />
                 </td>
                 <td align="left">
                     <h3 data-bind="text: name" style="margin: 0px;"></h3>
@@ -37,7 +37,7 @@
             </tr>
 
             <tr>
-                <td align="center">
+                <td align="center" colspan="2">
                     <div id="my-topgames-chart"
                          data-role="chart"
                          data-title="Top Games"
@@ -47,7 +47,9 @@
                          field: 'MatchCount', categoryField: 'Name', padding: 0}]"
                          data-bind="source: topGames"></div>
                 </td>
-                <td align="center">
+                </tr>
+            <tr>
+                <td align="center" colspan="2">
                     <div id="my-winloss-chart"
                          data-role="chart"
                          data-title="Win / Loss Ratio"
@@ -63,7 +65,7 @@
             <tr>
                 <td colspan="2">
                     <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: frequentOppId}">
-                        <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="36" />
+                        <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="48" height="48" width="48" />
                         <b>Biggest Competitor:</b>
                         <br />
                         <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
@@ -73,7 +75,7 @@
             <tr>
                 <td colspan="2">
                     <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: lossOppId}">
-                        <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="36" />
+                        <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="48" height="48" width="48" />
                         <b>Toughest to Beat:</b>
                         <br /><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
                     </span>
@@ -82,7 +84,7 @@
             <tr>
                 <td colspan="2">
                     <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: winOppId}">
-                        <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="36" />
+                        <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="48" height="48" width="48" />
                         <b>Easiest to Beat:</b>
                         <br />
                         <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
