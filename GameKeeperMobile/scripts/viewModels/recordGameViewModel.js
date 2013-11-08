@@ -34,6 +34,12 @@
         selectedEventTitle: function () {
             return vm.hasSelectedEvent() ? vm.get("selectedEvent").Name : "";
         },
+        selectedEventLocation: function () {
+            return vm.hasSelectedEvent() ? vm.get("selectedEvent").Location : "";
+        },
+        selectedEventStartDate: function () {
+            return vm.hasSelectedEvent() ? vm.get("selectedEvent").StartDate : "";
+        },
         
         hasSelectedGame: function () {
             return vm.get("selectedGame") !== null;
