@@ -225,6 +225,34 @@ body, html {
     .btn.cta span {
         color: White;
     }
+
+.fa {
+    font-size: 27px;
+}
+.km-fa-record:after,
+.km-fa-record:before {
+    font: 27px/27px "FontAwesome";
+    content:"\F044";
+    text-align:center;
+}
+.km-fa-trophy:after,
+.km-fa-trophy:before {
+    font: 27px/27px "FontAwesome";
+    content:"\F091";
+    text-align:center;
+}
+.km-fa-reports:after,
+.km-fa-reports:before {
+    font: 27px/27px "FontAwesome";
+    content:"\F080";
+    text-align:center;
+}
+.km-fa-profile:after,
+.km-fa-profile:before {
+    font: 27px/27px "FontAwesome";
+    content:"\F007";
+    text-align:center;
+}
 .record-btn-home:before {
     content: "\F040";
     padding-right: 8px;
