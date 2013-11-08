@@ -249,6 +249,9 @@ body, html {
 .km-ios7 .km-button {
     background: white;
 }
+.km-ios7 .km-footer .btn {
+    margin: 5px auto;
+}
     .btn span {
         font-size: 20px;
         color: black;

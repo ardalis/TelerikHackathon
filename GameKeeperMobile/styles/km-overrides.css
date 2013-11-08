@@ -14,6 +14,7 @@
 .km-ios7 .km-list > li {
     /*padding-left: 0;*/
     border-image: 0 none;
+    border-top-color: #E6E6E5;
 }
 
 
@@ -24,4 +25,15 @@
 .km-ios7 .km-list li > .km-listview-label {
     margin: 0;
     padding: 0;
+}
+.km-ios7 .km-footer {
+    background: #E6E6E5;
+}
+.km-ios7 .km-tabstrip, .km-ios7 .km-navbar {
+    background: #193B67;
+    border-top: 0 none;
+    color: white;
+}
+.km-ios7 .km-tabstrip .km-button:not(.km-state-active), .km-ios7 li.km-state-active .km-listview-link, .km-ios7 li.km-state-active .km-listview-label {
+    color: #A6DEF2;
 }
