@@ -21,6 +21,13 @@
         selectedPlayerIds: [],
         selectedPlayers: [],
 
+        clear: function () {
+            this.set("selectedEvent", null);
+            this.set("selectedGame", null);
+            this.set("selectedPlayerIds", []);
+            this.set("selectedPlayers", []);
+        },
+
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
         },
@@ -70,6 +77,8 @@
                 GameID: vm.selectedGame.id,
                 DateCreated: new Date()
             }).then(function (match) {
+                app.application.showLoading();
+                // HACK: here be dragons.
                 var winnersTable = azureClient.getTable('matchwinner');
                 var losersTable = azureClient.getTable('matchloser');
                 var saveWinners = vm.selectedPlayers.filter(function (player) { return player.IsWinner; }).map(function (player) {
@@ -88,7 +97,9 @@
                 });
                 $.when.apply($, saveWinners).then(function (winners) {
                     $.when.apply($, saveLosers).then(function (losers) {
-                        debugger;
+                        app.application.hideLoading();
+                        app.application.navigate("#:back");
+                        vm.clear();
                     });
                 });
             });
