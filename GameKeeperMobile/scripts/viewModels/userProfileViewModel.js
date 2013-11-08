@@ -55,6 +55,16 @@
                 });
             });
 
+            // Frequent games
+            var preferredGames = azureClient.invokeApi("preferredgamesforplayer", {
+                method: 'get',
+                parameters: {playerid: playerId}
+            }).then(function(result) {
+                vm.set("topGames", new kendo.data.DataSource({
+                    data: JSON.parse(result.response)
+                }))
+            })
+
             playerTable.lookup(playerId).done(function (player) {
                 vm.set("name", player.Name);
                 vm.set("email", player.EmailAddress);
