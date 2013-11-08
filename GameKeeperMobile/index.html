@@ -1,90 +1,93 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8" />
-    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
-    <link href="styles/main.css" rel="stylesheet" />
-    <link href="styles/km-overrides.css" rel="stylesheet" />
-    <link href="styles/font-awesome.min.css" rel="stylesheet" />
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/km-overrides.css" rel="stylesheet" />
+        <link href="styles/font-awesome.min.css" rel="stylesheet" />
 
-    <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
-    <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
-    <script src="scripts/underscore.min.js"></script>
-    <script src="scripts/MobileServices.Web-1.0.0.min.js"></script>
-    <script src="scripts/require.js" data-main="scripts/app"></script>
-</head>
-<body>
-    <!--Home-->
-    <div id="home" class="home-bg"
-         data-role="view"
-         data-title="Home"
-         data-layout="plain-layout"
-         data-model="app.viewModels.home">
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+        <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
+        <script src="scripts/underscore.min.js"></script>
+        <script src="scripts/MobileServices.Web-1.0.0.min.js"></script>
+        <script src="scripts/require.js" data-main="scripts/app"></script>
+    </head>
+    <body>
+        <!--Home-->
+        <div id="home" class="home-bg"
+             data-role="view"
+             data-title="Home"
+             data-layout="plain-layout"
+             data-model="app.viewModels.home">
 
-        <div class="view-content home-buttons-container">
-            <p><a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a></p>
-            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn cta record-btn-home">Record Game Played</a></p>
-            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn leaderboard-btn-home">Leaderboards</a></p>
-            <p><a data-role="button" href="views/record-game.html?from=Home" class="btn reports-btn-home">Reports</a></p>
+            <div class="view-content home-buttons-container">
+                <p>
+                    <a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a>
+                </p>
+                <p>
+                    <a data-role="button" href="views/record-game.html?from=Home" class="btn cta record-btn-home">Record Game Played</a>
+                </p>
+                <p>
+                    <a data-role="button" href="views/record-game.html?from=Home" class="btn leaderboard-btn-home">Leaderboards</a>
+                </p>
+                <p>
+                    <a data-role="button" href="views/record-game.html?from=Home" class="btn reports-btn-home">Reports</a>
+                </p>
 
-            <!--<p>
+                <!--<p>
                 <img data-bind="attr: { src: testGravatarUrl }" />
                 Icenium&trade; enables you to build cross-platform device applications regardless of your
-                    development platform by combining the convenience of a local development toolset with the
-                    power and flexibility of the cloud.
-            </p>-->
-        </div>
-    </div>
-
-    <!--Layout-->
-    <div data-role="layout" data-id="plain-layout">
-
-    </div>
-
-    <div data-role="layout" data-id="default-layout">
-        <div data-role="header">
-            <div data-role="navbar">
-                <a class="nav-button" data-align="left" data-role="backbutton"></a>
-                <span data-role="view-title"></span>
+                development platform by combining the convenience of a local development toolset with the
+                power and flexibility of the cloud.
+                </p>-->
             </div>
         </div>
-    </div>
 
-    <div data-role="layout" data-id="sub-pages">
-        <div data-role="header" class="header">
-            <div data-role="navbar" id="navbar" style="background-color: #193B67">
-                <a data-align="left" style="color: white; background-color: #193B67" data-role="backbutton"></a>
-<!--                <h1 class="top-logo">J</h1>-->
-                <span style="color:white" data-role="view-title"></span>
-                <!--<span style="color:white" data-rel="back">Foo</span>-->
+        <!--Layout-->
+        <div data-role="layout" data-id="plain-layout">
+
+        </div>
+
+        <div data-role="layout" data-id="default-layout">
+            <div data-role="header">
+                <div data-role="navbar">
+                    <a class="nav-button" data-align="left" data-role="backbutton"></a>
+                    <span data-role="view-title"></span>
+                </div>
             </div>
         </div>
-        <div data-role="footer">
-            <div data-role="tabstrip">
-                <a href="views/record-game.html" data-icon="fa-record">Record</a>
-                <a href="views/leaders.html" data-icon="fa-trophy">Leaders</a>
-                <a href="views/reports.html" data-icon="fa-reports">Reports</a>
-                <a href="views/userProfile.html" data-icon="fa-profile">Me</a>
+
+        <div data-role="layout" data-id="sub-pages">
+            <div data-role="header" class="header">
+                <div data-role="navbar" id="navbar" style="background-color: #193B67">
+                    <a data-align="left" style="color: white; background-color: #193B67" data-role="backbutton"></a>
+                    <!--                <h1 class="top-logo">J</h1>-->
+                    <span style="color:white" data-role="view-title"></span>
+                    <!--<span style="color:white" data-rel="back">Foo</span>-->
+                </div>
+            </div>
+            <div data-role="footer">
+                <div data-role="tabstrip">
+                    <a href="views/record-game.html" data-icon="fa-record">Record</a>
+                    <a href="views/leaders.html" data-icon="fa-trophy">Leaders</a>
+                    <a href="views/reports.html" data-icon="fa-reports">Reports</a>
+                    <a href="views/userProfile.html" data-icon="fa-profile">Me</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div data-role="layout" data-id="logo-layout">
-        <div data-role="header" class="header">
-            <div data-role="navbar">
-                <h1 class="top-logo">GameKeeper</h1>
+        <div data-role="layout" data-id="logo-layout">
+            <div data-role="header" class="header">
+                <div data-role="navbar">
+                    <h1 class="top-logo">GameKeeper</h1>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!--Templates-->
-    <script id="choose-event-list-item-template" type="text/x-kendo-template">
-        #: Name #
-    </script>
 
     <script id="choose-game-list-item-template" type="text/x-kendo-template">
         <img class="thumbnail-img" src="#: BoxImageUrl #" />
@@ -100,22 +103,20 @@
             <input type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
     </script>
 
-    <script id="game-player-list-item-template" type="text/x-kendo-template">
-        <li data-bind="click: onPlayerIconTapped, attr: { data-is-winner: IsWinner }">
-            <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="position-left" />
-        </li>
-    </script>
-    <script>
-        function changeTitle(e) {
-            var fromPage = e.view.params;
-            if (fromPage != undefined) {
-                var kmnb = $("#navbar").data("kendoMobileNavBar");
-                if (kmnb != undefined) {
-                    kmnb.title(fromPage.from);
-                }
-            }
-        }
-    </script>
+        <script id="choose-players-list-item-template" type="text/x-kendo-template">
+            <label>
+                <img data-bind="gravatar: EmailAddress" data-gravatar-size="32" class="position-left player-list-avatar" />
+                <div class="player-name" data-bind="text: Name"></div>
+                <div class="player-email" data-bind="text: EmailAddress"></div>
+                <input type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
+            </label>
+        </script>
 
-</body>
+        <script id="game-player-list-item-template" type="text/x-kendo-template">
+            <li data-bind="click: onPlayerIconTapped, attr: { data-is-winner: IsWinner }">
+                <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="position-left" />
+            </li>
+        </script>
+        
+    </body>
 </html>
