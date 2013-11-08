@@ -22,6 +22,8 @@
             var size = parseInt(el.attr("data-gravatar-size"), 10);
 
             el.attr("src", overrides[email] || getImageUrlForEmail(email, size));
+            el.attr("width", size);
+            el.attr("height", size);
         }
     });
 });
