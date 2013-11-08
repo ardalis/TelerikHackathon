@@ -10,7 +10,7 @@
             if (validator.validate()) {
                 radio("player/created").broadcast({
                     Name: vm.get("name"),
-                    Email: vm.get("email")
+                    EmailAddress: vm.get("email")
                 });
                 vm.clear();
             }

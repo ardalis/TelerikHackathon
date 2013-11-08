@@ -15,6 +15,7 @@
     <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
     <script src="scripts/everlive.all.min.js"></script>
     <script src="scripts/kendo.data.everlive.min.js"></script>
+    <script src="scripts/MobileServices.Web-1.0.0.min.js"></script>
     <script src="scripts/require.js" data-main="scripts/app"></script>
 </head>
 <body>
@@ -55,18 +56,18 @@
     </div>
 
     <div data-role="layout" data-id="sub-pages">
-        <div data-role="header">
+        <div data-role="header" class="header">
             <div data-role="navbar">
-                <span data-role="view-title"></span>
+                <h1 class="top-logo">GK</h1>
+                <!--<span data-role="view-title"></span>-->
             </div>
         </div>
         <div data-role="footer">
             <div data-role="tabstrip">
-                <h1 class="top-logo">GameKeeper</h1>
-                <a href="nerdy" data-icon="home">Clean</a>
-                <a href="explicit" data-icon="info">Explicit</a>
-                <a href="explicit" data-icon="settings">Explicit</a>
-                <a href="explicit" data-icon="globe">Explicit</a>
+                <a href="views/record-game.html" data-icon="fa-record">Record</a>
+                <a href="views/leaders.html" data-icon="fa-trophy">Leaders</a>
+                <a href="views/reports.html" data-icon="fa-reports">Reports</a>
+                <a href="views/userProfile.html" data-icon="fa-profile">Me</a>
             </div>
         </div>
     </div>
@@ -90,16 +91,16 @@
 
     <script id="choose-players-list-item-template" type="text/x-kendo-template">
         <label>
-            <img data-bind="gravatar: Email" data-gravatar-size="32" class="position-left player-list-avatar" />
+            <img data-bind="gravatar: EmailAddress" data-gravatar-size="32" class="position-left player-list-avatar" />
             <div class="player-name" data-bind="text: Name"></div>
-            <div class="player-email" data-bind="text: Email"></div>
-            <input type="checkbox" data-bind="value: Id, checked: selectedPlayers" />
+            <div class="player-email" data-bind="text: EmailAddress"></div>
+            <input type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
         </label>
     </script>
 
     <script id="game-player-list-item-template" type="text/x-kendo-template">
         <li data-bind="click: onPlayerIconTapped, attr: { data-is-winner: IsWinner }">
-            <img data-bind="gravatar: Email" data-gravatar-size="48" class="position-left" />
+            <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="position-left" />
         </li>
     </script>
 </body>

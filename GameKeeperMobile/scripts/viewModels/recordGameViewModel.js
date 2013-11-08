@@ -46,12 +46,12 @@
         onChoosePlayersTapped: function () {
             choosePlayersDialog.show(function (playerIds) {
                 var selectedPlayerViewModels = datasources.players.data().filter(function (player) {
-                    return playerIds.indexOf(player.id) >= 0;
+                    return playerIds.indexOf(player.ID) >= 0;
                 }).map(function (player) {
-                    return vm.get("selectedPlayers").filter(function (pvm) { return pvm.id === player.id; })[0] || {
-                        id: player.id,
+                    return vm.get("selectedPlayers").filter(function (pvm) { return pvm.ID === player.ID; })[0] || {
+                        ID: player.ID,
                         Name: player.Name,
-                        Email: player.Email,
+                        EmailAddress: player.EmailAddress,
                         IsWinner: false
                     };
                 });

@@ -29,8 +29,13 @@
     });
 
     radio("player/created").subscribe(function (item) {
-        dataSource.add(item);
-        dataSource.sync();
+        debugger;
+        datasources.players.add(item);
+        try {
+            datasources.players.sync();
+        } catch (ex) {
+            debugger;
+        }
         window.app.application.navigate("#:back");
     });
 

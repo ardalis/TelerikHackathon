@@ -1,4 +1,4 @@
-﻿define(["el"], function (el) {
+﻿define(["el", "azure-client"], function (el, azureClient) {
     "use strict";
 
     var createEverliveDataSource = function (typeName) {
@@ -14,9 +14,30 @@
         });
     };
 
+    var createAzureDataSource = function (typeName) {
+        var table = azureClient.getTable(typeName);
+        return new kendo.data.DataSource({
+            schema: {
+                model: { id: "ID" }
+            },
+            autosync: true,
+            transport: {
+                read: function (options) {
+                    table.read().done(function (results) {
+                        options.success(results);
+                    });
+                },
+                update: function (options) {
+                    debugger;
+                    options.fail("ph no");
+                }
+            }
+        });
+    };
+
     var eventsDataSource = createEverliveDataSource('Events');
     var gamesDataSource = createEverliveDataSource('Games');
-    var playersDataSource = createEverliveDataSource('Players');
+    var playersDataSource = createAzureDataSource('player');
 
     return {
         events: eventsDataSource,

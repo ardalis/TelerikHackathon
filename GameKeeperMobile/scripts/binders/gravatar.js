@@ -10,7 +10,7 @@
     kendo.data.binders.gravatar = kendo.data.Binder.extend({
         refresh: function () {
             var el = $(this.element);
-            var email = this.bindings["gravatar"].get();
+            var email = this.bindings["gravatar"].get() || "";
             var size = parseInt(el.attr("data-gravatar-size"), 10);
 
             el.attr("src", getImageUrlForEmail(email, size));
