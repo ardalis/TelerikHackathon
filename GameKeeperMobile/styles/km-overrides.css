@@ -21,3 +21,7 @@
     padding: .25em 0;
 }
 
+.km-ios7 .km-list li > .km-listview-label {
+    margin: 0;
+    padding: 0;
+}
