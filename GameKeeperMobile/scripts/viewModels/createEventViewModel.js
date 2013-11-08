@@ -8,7 +8,14 @@
 
         onUseCurrentLocationTapped: function () {
             navigator.geolocation.getCurrentPosition(function (position) {
-                vm.set("location", kendo.format("{0}, {1}", position.coords.latitude, position.coords.longitude));
+                var coordinates = kendo.format("{0}, {1}", position.coords.latitude, position.coords.longitude);
+                vm.set("location", coordinates);
+                $.get('http://maps.googleapis.com/maps/api/geocode/json?sensor=true&latlng=' + coordinates).then(function (response) {
+                    // Opportunity for improvement: could let user pick from the list of likely addresses.
+                    vm.set("location", response.results[0].formatted_address);
+                }, function () {
+                    // slurp errors
+                });
             });
         },
         onSaveTapped: function (e) {
