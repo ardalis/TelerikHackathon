@@ -17,12 +17,10 @@
                 { name: "Settlers of Catan", wins: 3 }
             ]
         }),
-        winLoss: new kendo.data.DataSource({
-            data: [
-                { name: "Wins", count: 20},
-                { name: "Losses", count: 10 }
-            ]
-        }),
+        winLoss: [
+            { name: "Wins", count: 20 },
+            { name: "Losses", count: 10 }
+        ],
         formattedCreateDate: function () {
             return kendo.toString(vm.createdAt, "MMM d, yyyy");
         },
@@ -36,7 +34,7 @@
         lossOppWins: 4,
         lossOppLosses: 8,
 
-        onBeforeShow: function () {
+        onBeforeShow: function (e) {
             var playerId = 5;
 
             var playerTable = azureClient.getTable('player');
@@ -48,6 +46,14 @@
                 loseTable.where({ PlayerID: playerId }).read().done(function(losses) {
                     vm.set("recentWins", wins.length);
                     vm.set("recentMatches", wins.length + losses.length);
+                    vm.set("winLoss", [
+                        { name: "Wins", count: wins.length },
+                        { name: "Losses", count: losses.length }
+                    ]);
+
+                    vm.
+
+                    $(e.view).fadeIn();
                 });
             });
 
@@ -56,8 +62,6 @@
                 vm.set("email", player.EmailAddress);
                 vm.set("createdAt", player.CreatedDate);
             });
-
-            datasources.players.read();
         }
     });
 
