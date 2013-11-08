@@ -42,12 +42,20 @@
                          data-role="chart"
                          data-title="Top Games"
                          data-legend="{position: 'bottom'}"
-                         data-series-defaults="{type: 'pie'}"
+                         data-series-defaults="{
+                            type: 'pie',
+                            labels: {
+                                template: '#= category #',
+                                visible: true,
+                                background: 'transparent',
+                                position: 'center'
+                            }
+                         }"
                          data-series="[{
                          field: 'MatchCount', categoryField: 'Name', padding: 0}]"
                          data-bind="source: topGames"></div>
                 </td>
-                </tr>
+            </tr>
             <tr>
                 <td align="center" colspan="2">
                     <div id="my-winloss-chart"
@@ -57,7 +65,12 @@
                          data-legend="{position: 'bottom'}"
                          data-series-defaults="{type: 'pie'}"
                          data-series="[{
-                         field: 'count', categoryField: 'name', padding: 0}]"
+                         field: 'count', categoryField: 'name', padding: 0, labels: {
+                                template: '#= category #',
+                                visible: true,
+                                background: 'transparent',
+                                position: 'center'
+                            }}]"
                          data-bind="source: winLoss"></div>
                 </td>
             </tr>
