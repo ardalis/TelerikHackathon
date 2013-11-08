@@ -6,3 +6,7 @@
     font-size: 12px;
     border-top: 0;
 }
+
+.km-list > li, .km-root .km-listview-link, .km-root .km-listview-label {
+    padding: 0;
+}
