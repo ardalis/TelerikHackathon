@@ -1,4 +1,5 @@
 ﻿define([
+    "viewModels/reports/index",
     "viewModels/recordGameViewModel",
     "viewModels/chooseEventViewModel",
     "viewModels/createEventViewModel",
@@ -8,6 +9,7 @@
     "viewModels/createPlayerViewModel",
     "viewModels/userProfileViewModel"
 ], function (
+    reports,
     recordGameViewModel,
     chooseEventViewModel,
     createEventViewModel,
@@ -20,6 +22,7 @@
     "use strict";
 
     return {
+        reports: reports,
         recordGame: recordGameViewModel,
         chooseEvent: chooseEventViewModel,
         createEvent: createEventViewModel,
@@ -28,8 +31,6 @@
         choosePlayers: choosePlayersViewModel,
         createPlayer: createPlayerViewModel,
         userProfile: userProfileViewModel,
-        home: kendo.observable({
-            gravatarEmail: 'Chris.Wagner@telerik.com'
-        })
+        home: kendo.observable({})
     };
 });

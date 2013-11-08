@@ -105,6 +105,8 @@
     </Content>
     <Content Include="scripts\viewModels\index.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
+    <Content Include="scripts\viewModels\reports\index.js" />
+    <Content Include="scripts\viewModels\reports\gameplayHistoryViewModel.js" />
     <Content Include="scripts\viewModels\selectorViewModel.js" />
     <Content Include="styles\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -176,7 +178,6 @@
     </Content>
     <Content Include="views\record-game.html" />
     <Content Include="views\reports.html" />
-    <Content Include="views\reports\success-over-time.html" />
     <Content Include="views\userProfile.html" />
   </ItemGroup>
   <ItemGroup>
@@ -197,10 +198,10 @@
     <Folder Include="scripts\" />
     <Folder Include="scripts\binders\" />
     <Folder Include="scripts\viewModels\" />
+    <Folder Include="scripts\viewModels\reports\" />
     <Folder Include="styles\" />
     <Folder Include="styles\images\" />
     <Folder Include="views\" />
-    <Folder Include="views\reports\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
   <!--

@@ -5,8 +5,17 @@
     <div class="view-content">
         <ul data-role="listview">
             <li>
-                <a data-role="button" href="views/reports/success-over-time.html">Wins/Losses over Time</a>
+                <a data-role="button" href="#gameplay-history">Gameplay History</a>
             </li>
         </ul>
     </div>
+</div>
+
+<div id="gameplay-history"
+        data-role="view"
+        data-title="Gameplay History"
+        data-show="app.viewModels.reports.gameplayHistory.onShow"
+        data-hide="app.viewModels.reports.gameplayHistory.onHide"
+        data-stretch="true">
+    <div id="line-chart"></div>
 </div>
