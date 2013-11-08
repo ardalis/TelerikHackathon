@@ -30,7 +30,6 @@
 
             var gotoPlayerId = e.currentTarget.attributes["playerId"].value.toString();
             window.app.application.navigate(kendo.format("views/userProfile.html?playerid=" + gotoPlayerId));
-            
         },
 
         onShow: function (e) {
@@ -51,7 +50,7 @@
                         { name: "Losses", count: losses.length }
                     ]);
 
-                    $(e.view).fadeIn();
+                    e.view.scroller.reset();
                 });
             });
 
