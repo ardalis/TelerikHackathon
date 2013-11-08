@@ -10,3 +10,6 @@
 .km-list > li, .km-root .km-listview-link, .km-root .km-listview-label {
     padding: 0;
 }
+.km-ios7 .km-list > li {
+    padding-left: 0;
+}
