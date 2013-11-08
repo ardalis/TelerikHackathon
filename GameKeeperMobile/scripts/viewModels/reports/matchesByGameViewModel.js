@@ -3,7 +3,7 @@
 
     var lineChart = null;
 
-    var drawChart = function (datesPlayed) {
+    var drawChart = function (datesPlayed, game) {
         var $lineChart;
         if (lineChart !== null) {
             lineChart.destroy();
@@ -26,7 +26,7 @@
             },
             title: {
                 position: "top",
-                text: "Times Played"
+                text: game.Name + " - Times Played"
             },
             legend: {
                 position: "bottom"
@@ -34,7 +34,7 @@
             series: [
                 {
                     type: "line",
-                    name: "Times Played",
+                    name: game.Name + " - Times Played",
                     categoryField: 'DateCreated',
                     field: 'DateCreated',
                     aggregate: "count",
@@ -62,8 +62,10 @@
         onShow: function (e) {
             var gameId = parseInt(e.view.params.gameId, 10);
             azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: gameId } }).done(function (result) {
-                datesPlayed = JSON.parse(result.response);
-                drawChart(datesPlayed);
+                azureClient.getTable('game').lookup(gameId).done(function (game) {
+                    datesPlayed = JSON.parse(result.response);
+                    drawChart(datesPlayed, game);
+                });
             });
         },
         onHide: function () {
