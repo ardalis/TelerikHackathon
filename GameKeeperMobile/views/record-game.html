@@ -1,8 +1,8 @@
 ﻿<div id="record-game"
-        data-role="view"
-        data-title="Record Game Result"
-        data-model="app.viewModels.recordGame"
-        data-layout="logo-layout">
+     data-layout="sub-pages"
+     data-role="view"
+     data-title="Record Game Result"
+     data-model="app.viewModels.recordGame">
     <div class="view-content">
         <ul data-role="listview" data-style="inset" data-type="group">
             <li>
@@ -27,8 +27,7 @@
                 Players
                 <ul>
                     <li class="select-options-btn">
-                        <ul class="winner-list" data-role="kendo.ui.ListView" data-bind="source: selectedPlayers" data-template="game-player-list-item-template">
-                        </ul>
+                        <ul class="winner-list" data-role="kendo.ui.ListView" data-bind="source: selectedPlayers" data-template="game-player-list-item-template"></ul>
                         <a data-role="button" class="edit-player-list" data-click="app.viewModels.recordGame.onChoosePlayersTapped"><i class="fa fa-pencil btn-edit-square"></i></a>
                     </li>
                 </ul>
