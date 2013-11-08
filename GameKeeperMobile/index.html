@@ -28,7 +28,7 @@
 
             <div class="view-content home-buttons-container">
                 <!--<p>
-                    <a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a>
+                <a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a>
                 </p>-->
                 <p>
                     <a data-role="button" href="views/record-game.html?from=Home" class="btn cta record-btn-home">Record Game Played</a>
@@ -56,9 +56,10 @@
 
         <div data-role="layout" data-id="default-layout">
             <div data-role="header">
-                <div data-role="navbar">
-                    <a class="nav-button" data-align="left" data-role="backbutton"></a>
-                    <span data-role="view-title"></span>
+                <div data-role="navbar" id="navbar" style="background-color: #193B67">
+                    <a data-align="left" style="color: white; background-color: #193B67" data-role="backbutton"></a>
+                    <span style="color:white" data-role="view-title"></span>
+                    <!--<span style="color:white" data-rel="back">Foo</span>-->
                 </div>
             </div>
         </div>
@@ -89,25 +90,24 @@
             </div>
         </div>
 
-    <script id="choose-game-list-item-template" type="text/x-kendo-template">
-        <img class="thumbnail-img" src="#: BoxImageUrl #" />
-        <span class="game-name" data-bind="invisible: displayLinks">#: Name #</span>
-        <a href="${parent().parent().displayLinks}?gameId=${id}" class="game-name" data-bind="visible: displayLinks">#: Name #</a>
-    </script>
+        <script id="choose-game-list-item-template" type="text/x-kendo-template">
+            <img class="thumbnail-img" src="#: BoxImageUrl #" />
+            <span class="game-name" data-bind="invisible: displayLinks">#: Name #</span>
+            <a href="${parent().parent().displayLinks}?gameId=${id}" class="game-name" data-bind="visible: displayLinks">#: Name #</a>
+        </script>
 
-    <script id="choose-players-list-item-template" type="text/x-kendo-template">
-        <label>
-            <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="thumbnail-img" />
-            <div class="position-left">
-                <div class="player-name" data-bind="text: Name"></div>
-                <div class="player-email" data-bind="text: EmailAddress"></div>
-            </div>
-            <input class="position-right" type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
-            <br clear="all" />
-        </label>
-   </script>
+        <script id="choose-players-list-item-template" type="text/x-kendo-template">
+            <label>
+                <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="thumbnail-img" />
+                <div class="position-left">
+                    <div class="player-name" data-bind="text: Name"></div>
+                    <div class="player-email" data-bind="text: EmailAddress"></div>
+                </div>
+                <input class="position-right" type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
+                <br clear="all" />
+            </label>
+        </script>
 
-        
         <script id="choose-event-list-item-template" type="text/x-kendo-template">
             #: Name #
         </script>
@@ -142,6 +142,6 @@
                 }
             }
         </script>
-   
+
     </body>
 </html>
