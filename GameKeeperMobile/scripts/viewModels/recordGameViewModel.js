@@ -62,6 +62,9 @@
         onPlayerIconTapped: function (e) {
             var tappedPlayer = e.target.kendoBindingTarget.source;
             tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
+        },
+        onSaveButtonTapped: function (e) {
+            debugger;
         }
     });
 
