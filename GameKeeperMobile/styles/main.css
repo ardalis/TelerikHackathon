@@ -407,13 +407,3 @@ body, html {
         background-size: 202px 54px;
     }
 }
-
-[data-gravatar-size="32"] {
-    width: 32px;
-    height: 32px;
-}
-
-[data-gravatar-size="48"] {
-    width: 48px;
-    height: 48px;
-}
