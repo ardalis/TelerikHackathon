@@ -65,6 +65,7 @@
 
                 var nPlayers = JSON.parse(nResult.response);
                 vm.set("frequentOpp", nPlayers[0].Name);
+                vm.set("frequentOppEmail", nPlayers[0].EmailAddress);
                 vm.set("frequentOppWins", nPlayers[0].Wins);
                 vm.set("frequentOppLosses", nPlayers[0].Losses);
                 vm.set("lossOpp", nPlayers[1].Name);

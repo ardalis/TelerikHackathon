@@ -63,25 +63,29 @@
 
             <tr>
                 <td colspan="2">
-                    <b>Biggest Competitor:</b><span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                    <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="36" />
+                    <b>Biggest Competitor:</b>
+                    <br/>
+                    <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <b>Toughest to Beat:</b><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                    <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="36" />
+                    <b>Toughest to Beat:</b>
+                    <br/><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <b>Easiest to Beat:</b><span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
+                    <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="36" />
+                    <b>Easiest to Beat:</b>
+                    <br/>
+                    <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
                 </td>
             </tr>
 
         </table>
-
-        <div>
-            <h3>Achievements</h3>
-        </div>
 
     </div>
     <script>
