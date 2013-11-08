@@ -26,8 +26,16 @@
         lossOppLosses: 8,
         **/ 
 
-        onBeforeShow: function (e) {
-            var playerId = 5;
+        gotoProfile: function(e) {
+
+            var gotoPlayerId = e.currentTarget.attributes["playerId"].value.toString();
+            window.app.application.navigate(kendo.format("views/userProfile.html?playerid=" + gotoPlayerId));
+            
+        },
+
+        onShow: function (e) {
+            console.log(e.view.params.playerid);
+            var playerId = (e.view.params.playerid) ? parseInt(e.view.params.playerid,10) : 5;
 
             var playerTable = azureClient.getTable('player');
             var winTable = azureClient.getTable('matchwinner');
@@ -65,14 +73,17 @@
 
                 var nPlayers = JSON.parse(nResult.response);
                 vm.set("frequentOpp", nPlayers[0].Name);
+                vm.set("frequentOppId", nPlayers[0].PlayerId);
                 vm.set("frequentOppEmail", nPlayers[0].EmailAddress);
                 vm.set("frequentOppWins", nPlayers[0].Wins);
                 vm.set("frequentOppLosses", nPlayers[0].Losses);
                 vm.set("lossOpp", nPlayers[1].Name);
+                vm.set("lossOppId", nPlayers[1].PlayerId);
                 vm.set("lossOppEmail", nPlayers[1].EmailAddress);
                 vm.set("lossOppWins", nPlayers[1].Wins);
                 vm.set("lossOppLosses", nPlayers[1].Losses);
                 vm.set("winOpp", nPlayers[2].Name);
+                vm.set("winOppId", nPlayers[2].PlayerId);
                 vm.set("winOppEmail", nPlayers[2].EmailAddress);
                 vm.set("winOppWins", nPlayers[2].Wins);
                 vm.set("winOppLosses", nPlayers[2].Losses);

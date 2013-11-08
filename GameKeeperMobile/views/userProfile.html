@@ -3,9 +3,8 @@
      data-layout="sub-pages"
      data-role="view"
      data-title="User Profile"
-     data-show="changeTitle"
      data-model="app.viewModels.userProfile"
-     data-before-show="app.viewModels.userProfile.onBeforeShow">
+     data-show="app.viewModels.userProfile.onShow">
 
     <div class="view-content">
 
@@ -63,25 +62,31 @@
 
             <tr>
                 <td colspan="2">
-                    <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="36" />
-                    <b>Biggest Competitor:</b>
-                    <br/>
-                    <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: frequentOppId}">
+                        <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="36" />
+                        <b>Biggest Competitor:</b>
+                        <br />
+                        <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="36" />
-                    <b>Toughest to Beat:</b>
-                    <br/><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: lossOppId}">
+                        <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="36" />
+                        <b>Toughest to Beat:</b>
+                        <br /><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                    </span>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="36" />
-                    <b>Easiest to Beat:</b>
-                    <br/>
-                    <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
+                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: winOppId}">
+                        <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="36" />
+                        <b>Easiest to Beat:</b>
+                        <br />
+                        <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
+                    </span>
                 </td>
             </tr>
 
