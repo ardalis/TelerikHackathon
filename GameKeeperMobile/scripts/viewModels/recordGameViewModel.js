@@ -3,13 +3,15 @@
     "viewModels/chooseEventViewModel",
     "viewModels/chooseGameViewModel",
     "viewModels/choosePlayersViewModel",
-    "datasources"
+    "datasources",
+    "azure-client"
 ], function (
     radio,
     chooseEventDialog,
     chooseGameDialog,
     choosePlayersDialog,
-    datasources
+    datasources,
+    azureClient
 ) {
     "use strict";
 
@@ -18,6 +20,13 @@
         selectedGame: null,
         selectedPlayerIds: [],
         selectedPlayers: [],
+
+        clear: function () {
+            this.set("selectedEvent", null);
+            this.set("selectedGame", null);
+            this.set("selectedPlayerIds", []);
+            this.set("selectedPlayers", []);
+        },
 
         hasSelectedEvent: function () {
             return vm.get("selectedEvent") !== null;
@@ -62,6 +71,38 @@
         onPlayerIconTapped: function (e) {
             var tappedPlayer = e.target.kendoBindingTarget.source;
             tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
+        },
+        onSaveButtonTapped: function (e) {
+            azureClient.getTable('match').insert({
+                GameID: vm.selectedGame.id,
+                DateCreated: new Date()
+            }).then(function (match) {
+                app.application.showLoading();
+                // HACK: here be dragons.
+                var winnersTable = azureClient.getTable('matchwinner');
+                var losersTable = azureClient.getTable('matchloser');
+                var saveWinners = vm.selectedPlayers.filter(function (player) { return player.IsWinner; }).map(function (player) {
+                    return winnersTable.insert({
+                        MatchID: match.id,
+                        PlayerID: player.ID,
+                        Score: 1
+                    });
+                });
+                var saveLosers = vm.selectedPlayers.filter(function (player) { return !player.IsWinner; }).map(function (player) {
+                    return losersTable.insert({
+                        MatchID: match.id,
+                        PlayerID: player.ID,
+                        Score: 0
+                    });
+                });
+                $.when.apply($, saveWinners).then(function (winners) {
+                    $.when.apply($, saveLosers).then(function (losers) {
+                        app.application.hideLoading();
+                        app.application.navigate("#:back");
+                        vm.clear();
+                    });
+                });
+            });
         }
     });
 
