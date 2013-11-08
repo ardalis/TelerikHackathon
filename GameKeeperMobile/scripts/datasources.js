@@ -25,9 +25,10 @@
                     table.read().done(function (results) {
                         options.success(results);
                     });
+                },
+                update: function (options) {
+                    debugger;
                 }
-                //update: jsonFromUrl(idUrl),
-                //destroy: jsonFromUrl(idUrl)
             }
         });
     };
