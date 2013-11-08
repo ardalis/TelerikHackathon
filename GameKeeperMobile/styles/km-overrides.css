@@ -7,9 +7,17 @@
     border-top: 0;
 }
 
-.km-list > li, .km-root .km-listview-link, .km-root .km-listview-label {
+.km-root .km-listview-link, .km-root .km-listview-label {
     padding: 0;
-}
+/*.km-list > li,*/ }
+
 .km-ios7 .km-list > li {
-    padding-left: 0;
+    /*padding-left: 0;*/
+    border-image: 0 none;
 }
+
+
+.km-ios7 .km-button {
+    padding: .25em 0;
+}
+
