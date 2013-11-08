@@ -8,7 +8,7 @@
 
     <div class="view-content">
 
-        <table style="margin: 10px 5px; ">
+        <table style="margin: 5px 5px; ">
             <tr>
                 <td rowspan="2">
                     <img data-bind="gravatar: email" data-gravatar-size="64" width="64" height="64" />
@@ -22,22 +22,49 @@
                     Active since: <span id="activeSince" data-bind="text: formattedCreateDate()"></span>
                 </td>
             </tr>
-        </table>
 
-        <table style="width: 100%;" border="0">
-            <tr>
-                <td style="text-align: center; width: 50%;">
-                    <h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentMatches"></h1>
-                    <h5>Matches last 90 days</h5>
-                </td>
-                <td style="text-align: center;">
-                    <h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentWins"></h1>
-                    <h5>Wins last 90 days</h5>
-                </td>
-            </tr>
-
+                <tr>
+                    <td style="text-align: center; width: 50%;">
+                        <h1 style="font-size: 56px; margin: 0px; padding: 0px;" data-bind="text: recentMatches"></h1>
+                        <h5 style="margin-top: 0px;">Matches last 90 days</h5>
+                    </td>
+                    <td style="text-align: center;">
+                        <h1 style="font-size: 56px; margin: 0px;" data-bind="text: recentWins"></h1>
+                        <h5 style="margin-top: 0px;">Wins last 90 days</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: frequentOppId}">
+                            <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="48" height="48" width="48" />
+                            <b>Biggest Competitor:</b>
+                            <br />
+                            <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: lossOppId}">
+                            <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="48" height="48" width="48" />
+                            <b>Toughest to Beat:</b>
+                            <br /><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: winOppId}">
+                            <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="48" height="48" width="48" />
+                            <b>Easiest to Beat:</b>
+                            <br />
+                            <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
+                        </span>
+                    </td>
+                </tr>
             <tr>
                 <td align="center" colspan="2">
+
                     <div id="my-topgames-chart"
                          style="width: 250px"
                          data-role="chart"
@@ -65,7 +92,7 @@
                          style="width: 250px"
                          data-role="chart"
                          data-title="Win / Loss Ratio"
-                         data-series-colors="[ 'green','red']"
+                         data-series-colors="[ '#66BC46','#74163F']"
                          data-legend="{position: 'bottom'}"
                          data-series-defaults="{type: 'pie'}"
                          data-series="[{
@@ -78,51 +105,21 @@
                          data-bind="source: winLoss"></div>
                 </td>
             </tr>
-
-            <tr>
-                <td colspan="2">
-                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: frequentOppId}">
-                        <img style="float: right" data-bind="gravatar: frequentOppEmail" data-gravatar-size="48" height="48" width="48" />
-                        <b>Biggest Competitor:</b>
-                        <br />
-                        <span data-bind="text: frequentOpp"></span> (<span data-bind="text: frequentOppWins"></span> - <span data-bind="text: frequentOppLosses"></span>)
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: lossOppId}">
-                        <img style="float: right" data-bind="gravatar: lossOppEmail" data-gravatar-size="48" height="48" width="48" />
-                        <b>Toughest to Beat:</b>
-                        <br /><span data-bind="text: lossOpp"></span> (<span data-bind="text: lossOppWins"></span> - <span data-bind="text: lossOppLosses"></span>)
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <span style="display: block; border: 0px;" data-bind="click: gotoProfile, attr: {playerid: winOppId}">
-                        <img style="float: right" data-bind="gravatar: winOppEmail" data-gravatar-size="48" height="48" width="48" />
-                        <b>Easiest to Beat:</b>
-                        <br />
-                        <span data-bind="text: winOpp"></span> (<span data-bind="text: winOppWins"></span> - <span data-bind="text: winOppLosses"></span>)
-                    </span>
-                </td>
-            </tr>
-
         </table>
-
     </div>
-    <script>
-        function changeTitle(e) {
-            if (e != undefined) {
-                var fromPage = e.view.params;
-                if (fromPage != undefined) {
-                    var kmnb = $("#navbar").data("kendoMobileNavBar");
-                    if (kmnb != undefined) {
-                        kmnb.title(fromPage.from);
-                    }
+</div>
+
+<script>
+    function changeTitle(e) {
+        if (e != undefined) {
+            var fromPage = e.view.params;
+            if (fromPage != undefined) {
+                var kmnb = $("#navbar").data("kendoMobileNavBar");
+                if (kmnb != undefined) {
+                    kmnb.title(fromPage.from);
                 }
             }
         }
-    </script>
-</div>
+    }
+</script>
+    </div>
