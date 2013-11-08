@@ -14,11 +14,11 @@
         });
     };
 
-    var createAzureDataSource = function (typeName) {
+    var createAzureDataSource = function (typeName, idColumn) {
         var table = azureClient.getTable(typeName);
         return new kendo.data.DataSource({
             schema: {
-                model: { id: "ID" }
+                model: { id: idColumn }
             },
             autosync: true,
             transport: {
@@ -42,8 +42,8 @@
     };
 
     var eventsDataSource = createEverliveDataSource('Events');
-    var gamesDataSource = createEverliveDataSource('Games');
-    var playersDataSource = createAzureDataSource('player');
+    var gamesDataSource = createAzureDataSource('game', 'id');
+    var playersDataSource = createAzureDataSource('player', 'ID');
 
     return {
         events: eventsDataSource,
