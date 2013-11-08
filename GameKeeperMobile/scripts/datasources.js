@@ -34,6 +34,7 @@
     var playersDataSource = createAzureDataSource('player', 'ID');
 
     return {
+        createAzureDataSource: createAzureDataSource,
         events: eventsDataSource,
         games: gamesDataSource,
         players: playersDataSource

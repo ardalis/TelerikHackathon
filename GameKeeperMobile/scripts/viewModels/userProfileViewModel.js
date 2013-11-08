@@ -1,4 +1,4 @@
-﻿define([], function () {
+﻿define(["azure-client", "datasources"], function (azureClient, datasources) {
     "use strict";
 
     var vm = kendo.observable ({
@@ -34,7 +34,20 @@
         winOppLosses: 3,
         lossOpp: "Phil Japikse",
         lossOppWins: 4,
-        lossOppLosses: 8
+        lossOppLosses: 8,
+
+        onBeforeShow: function () {
+            var playerId = 5;
+
+            datasources.players.one("change", function () {
+                var player = datasources.players.get(playerId);
+                vm.set("name", player.Name);
+                vm.set("email", player.EmailAddress);
+                vm.set("createdAt", player.CreatedDate);
+            });
+
+            datasources.players.read();
+        }
     });
 
     return vm;
