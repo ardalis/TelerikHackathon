@@ -60,6 +60,9 @@
                 baseUnit: "months",
                 majorGridLines: {
                     visible: false
+                },
+                labels: {
+                    rotation: 90
                 }
             }
         });

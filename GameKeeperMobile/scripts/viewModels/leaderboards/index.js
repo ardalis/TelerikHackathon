@@ -5,6 +5,10 @@
         return azureClient.invokeApi('leaderboardbywins', { method: 'get' });
     }, 'Wins');
 
+    var winsByGame = leaderboardViewModel.create(function () {
+        return azureClient.invokeApi('leaderboardbywins', { method: 'get' });
+    }, 'Wins');
+
     return {
         globalWins: globalWins
     };

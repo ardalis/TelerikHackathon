@@ -6,6 +6,9 @@
             rankings: [],
             dimension: dimension,
             onBeforeShow: function () {
+                vm.update();
+            },
+            update: function () {
                 createPromise().done(function (result) {
                     var wins = JSON.parse(result.response).filter(function (player) {
                         return player[vm.dimension] > 0;
