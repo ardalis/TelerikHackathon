@@ -73,13 +73,9 @@
                 parameters: { playerid: playerId }
             }).then(function (result) {
                 drawChart(JSON.parse(result.response));
-                $(window).on("resize.lineChart", function () {
-                    drawChart(result.response);
-                });
             });
         },
         onHide: function () {
-            $(window).off("resize.lineChart");
         }
     });
     return vm;
