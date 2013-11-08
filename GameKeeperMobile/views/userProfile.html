@@ -39,14 +39,17 @@
             <tr>
                 <td align="center" colspan="2">
                     <div id="my-topgames-chart"
+                         style="width: 250px"
                          data-role="chart"
                          data-title="Top Games"
+                         data-series-colors="[ '#74163F','#44187E', '#193B67', '#09976B', '#66BC46']"
                          data-legend="{position: 'bottom'}"
                          data-series-defaults="{
                             type: 'pie',
                             labels: {
                                 template: '#= category #',
                                 visible: true,
+                                color: '#EEEEEE',
                                 background: 'transparent',
                                 position: 'center'
                             }
@@ -59,6 +62,7 @@
             <tr>
                 <td align="center" colspan="2">
                     <div id="my-winloss-chart"
+                         style="width: 250px"
                          data-role="chart"
                          data-title="Win / Loss Ratio"
                          data-series-colors="[ 'green','red']"
