@@ -241,6 +241,7 @@ body, html {
     background: white;
     text-align: center;
     color: transparent;
+    width: 100%;
 }
 .km-ios7 .btn.km-button {
     padding-top: .75em;
@@ -259,12 +260,13 @@ body, html {
     .btn.cta {
         background: #66BC46;
         color: transparent;
+    }
+    .btn.tall {
         line-height: 2.5em;
     }
     .btn.blue {
         background: #016C97;
         color: transparent;
-        line-height: 2.5em;
     }
     .btn.cta span, .btn.blue span {
         color: White;
@@ -380,6 +382,9 @@ body, html {
     float: left;
     margin-top: 12px;
     font-size: 20px;
+}
+.button-row {
+    border-bottom: 0 none;
 }
 
 /* RETINA DISPLAY STYLES*/

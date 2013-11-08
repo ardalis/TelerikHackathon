@@ -12,9 +12,13 @@
 /*.km-list > li,*/ }
 
 .km-ios7 .km-list > li {
-    /*padding-left: 0;*/
+    padding-left: 12px;
     border-image: 0 none;
     border-top-color: #E6E6E5;
+    font-size: 20px;
+}
+.km-ios7 .km-list > li label {
+    color: #808285;
 }
 
 
@@ -36,4 +40,13 @@
 }
 .km-ios7 .km-tabstrip .km-button:not(.km-state-active), .km-ios7 li.km-state-active .km-listview-link, .km-ios7 li.km-state-active .km-listview-label {
     color: #A6DEF2;
+}
+.km-ios7 .km-list > li:last-child {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.km-list input[type=text]:not(.k-input), .km-list input[type=password], .km-list input[type=search], .km-list input[type=number], .km-list input[type=tel], .km-list input[type=url], .km-list input[type=email], .km-list input[type=file], .km-list input[type=month], .km-list input[type=color], .km-list input[type=week], .km-list input[type=date], .km-list input[type=time], .km-list input[type=datetime], .km-list input[type=datetime-local], .km-list select:not([multiple]), .km-list .k-dropdown, .km-list textarea {
+    width: 65%;
+    font-size: 20px !important;
 }
