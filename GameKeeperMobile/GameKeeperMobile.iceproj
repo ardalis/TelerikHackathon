@@ -63,8 +63,6 @@
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.dataviz.mobile.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />
-    <Content Include="scripts\ams.js" />
-    <Content Include="scripts\datasources.ams.js" />
     <Content Include="scripts\MobileServices.Web-1.0.0.min.js" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\kendoui.ttf" />
