@@ -61,7 +61,7 @@
         },
         onShow: function (e) {
             var gameId = parseInt(e.view.params.gameId, 10);
-            azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: gameId } }).done(function (result) {
+            azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: gameId, playerid: 8 } }).done(function (result) {
                 azureClient.getTable('game').lookup(gameId).done(function (game) {
                     datesPlayed = JSON.parse(result.response);
                     drawChart(datesPlayed, game);

@@ -30,7 +30,7 @@
             },
             title: {
                 position: "top",
-                text: "Wins and Losses"
+                text: "My Wins and Losses"
             },
             legend: {
                 position: "bottom"
