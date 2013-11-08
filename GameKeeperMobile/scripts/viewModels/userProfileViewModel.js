@@ -39,8 +39,19 @@
         onBeforeShow: function () {
             var playerId = 5;
 
-            datasources.players.one("change", function () {
-                var player = datasources.players.get(playerId);
+            var playerTable = azureClient.getTable('player');
+            var winTable = azureClient.getTable('matchwinner');
+            var loseTable = azureClient.getTable('matchloser');
+
+            // HACK: right now, the "last 90 days" is a total lie.
+            winTable.where({ PlayerID: playerId }).read().done(function(wins) {
+                loseTable.where({ PlayerID: playerId }).read().done(function(losses) {
+                    vm.set("recentWins", wins.length);
+                    vm.set("recentMatches", wins.length + losses.length);
+                });
+            });
+
+            playerTable.lookup(playerId).done(function (player) {
                 vm.set("name", player.Name);
                 vm.set("email", player.EmailAddress);
                 vm.set("createdAt", player.CreatedDate);
