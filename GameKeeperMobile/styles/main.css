@@ -228,11 +228,9 @@ body, html {
     background-size: 320px 568px;
     width: 100%;
     height: 100%;
-    padding-bottom: 10000px;
-    margin-bottom: -10000px;
 }
 .home-buttons-container {
-    margin-top: 98%;
+    margin-top: 94%;
 }
 .home-buttons-container p {
     margin-top: .75em;
