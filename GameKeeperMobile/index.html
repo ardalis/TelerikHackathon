@@ -27,9 +27,9 @@
              data-stretch="true">
 
             <div class="view-content home-buttons-container">
-                <p>
+                <!--<p>
                     <a data-role="button" href="views/userProfile.html?from=Home" class="btn start-btn-home">Get Started</a>
-                </p>
+                </p>-->
                 <p>
                     <a data-role="button" href="views/record-game.html?from=Home" class="btn cta record-btn-home">Record Game Played</a>
                 </p>
@@ -67,7 +67,6 @@
             <div data-role="header" class="header">
                 <div data-role="navbar" id="navbar" style="background-color: #193B67">
                     <a data-align="left" style="color: white; background-color: #193B67" data-role="backbutton"></a>
-                    <!--                <h1 class="top-logo">J</h1>-->
                     <span style="color:white" data-role="view-title"></span>
                     <!--<span style="color:white" data-rel="back">Foo</span>-->
                 </div>
@@ -128,6 +127,20 @@
                 <td>#: Score #</td>
             </tr>
         </script>
-        
+        <script>
+            function changeTitle(e) {
+                //Debugger;
+                if (e != undefined) {
+                    var fromPage = e.view.params;
+                    if (fromPage != undefined) {
+                        var kmnb = $("#navbar").data("kendoMobileNavBar");
+                        if (kmnb != undefined) {
+                            kmnb.title(fromPage.from);
+                        }
+                    }
+                }
+            }
+        </script>
+   
     </body>
 </html>
