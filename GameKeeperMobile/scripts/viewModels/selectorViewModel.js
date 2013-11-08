@@ -12,7 +12,11 @@
             show: function (callback, options) {
                 currentOptions = options || {};
                 selectedCallback = callback;
-                vm.set("displayLinks", currentOptions.displayLinks);
+                if (vm.get("displayLinks") !== currentOptions.displayLinks) {
+                    vm.set("displayLinks", currentOptions.displayLinks);
+                    // HACK: need to force rebind...
+                    dataSource.read();
+                }
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 

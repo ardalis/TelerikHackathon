@@ -59,8 +59,8 @@
             chooseGameDialog.show(null, { displayLinks: "#matches-by-game" });
         },
         onShow: function (e) {
-            var gameId = e.view.params.gameId;
-            azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: parseInt(gameId, 10) } }).done(function (result) {
+            var gameId = parseInt(e.view.params.gameId, 10);
+            azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: gameId } }).done(function (result) {
                 datesPlayed = JSON.parse(result.response);
                 drawChart(datesPlayed);
             });
