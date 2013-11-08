@@ -28,8 +28,6 @@ require(["viewModels/index", "radio", "binders/gravatar"], function (viewModels,
         os = kendo.support.mobileOS,
         statusBarStyle = os.ios && os.flatVersion >= 700 ? "black-translucent" : "black";
 
-    global.reqwest = global.reqwest || reqwest;
-
     document.addEventListener('deviceready', function () {
         navigator.splashscreen.hide();
     }, false);

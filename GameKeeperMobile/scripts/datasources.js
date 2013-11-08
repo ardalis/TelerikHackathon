@@ -1,26 +1,13 @@
-﻿define(["el", "azure-client"], function (el, azureClient) {
+﻿define(["azure-client"], function (azureClient) {
     "use strict";
 
-    var createEverliveDataSource = function (typeName) {
-        return new kendo.data.DataSource({
-            type: 'everlive',
-            transport: {
-                typeName: typeName
-            },
-            schema: {
-                model: { id: Everlive.idField }
-            },
-            sort: { field: "Name", dir: "asc" }
-        });
-    };
-
-    var createAzureDataSource = function (typeName) {
+    var createAzureDataSource = function (typeName, idColumn) {
         var table = azureClient.getTable(typeName);
         return new kendo.data.DataSource({
             schema: {
-                model: { id: "ID" }
+                model: { id: idColumn }
             },
-            autosync: true,
+            sort: { field: "Name", dir: "asc" },
             transport: {
                 read: function (options) {
                     table.read().done(function (results) {
@@ -28,16 +15,23 @@
                     });
                 },
                 update: function (options) {
-                    debugger;
-                    options.fail("ph no");
+                    table.update(options.data).done(function (results) {
+                        options.success(results);
+                    });
+                },
+                create: function (options) {
+                    delete options.data[idColumn];
+                    table.insert(options.data).done(function (results) {
+                        options.success(results);
+                    });
                 }
             }
         });
     };
 
-    var eventsDataSource = createEverliveDataSource('Events');
-    var gamesDataSource = createEverliveDataSource('Games');
-    var playersDataSource = createAzureDataSource('player');
+    var eventsDataSource = createAzureDataSource('event', 'ID');
+    var gamesDataSource = createAzureDataSource('game', 'id');
+    var playersDataSource = createAzureDataSource('player', 'ID');
 
     return {
         events: eventsDataSource,
