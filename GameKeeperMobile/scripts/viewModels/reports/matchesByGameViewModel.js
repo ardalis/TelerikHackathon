@@ -13,7 +13,16 @@
         $lineChart.kendoChart({
             renderAs: "svg",
             dataSource: {
-                data: datesPlayed
+                data: datesPlayed,
+                schema: {
+                    model: {
+                        fields: {
+                            DateCreated: {
+                                type: 'date'
+                            }
+                        }
+                    }
+                }
             },
             title: {
                 position: "top",
@@ -32,7 +41,11 @@
                 }
             ],
             categoryAxis: {
-                baseUnit: "days"
+                field: 'DateCreated',
+                baseUnit: "months",
+                labels: {
+                    rotation: 90
+                }
             }
         });
 
@@ -43,15 +56,14 @@
 
     var vm = kendo.observable({
         show: function () {
-            chooseGameDialog.show(function (game) {
-                azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: game.id } }).done(function (result) {
-                    datesPlayed = JSON.parse(result.response);
-                    window.app.application.navigate("#matches-by-game");
-                }, { stayOpen: true });
-            });
+            chooseGameDialog.show(null, { displayLinks: "#matches-by-game" });
         },
-        onShow: function () {
-            drawChart(datesPlayed);
+        onShow: function (e) {
+            var gameId = e.view.params.gameId;
+            azureClient.invokeApi('matchesbygame', { method: 'get', parameters: { gameid: parseInt(gameId, 10) } }).done(function (result) {
+                datesPlayed = JSON.parse(result.response);
+                drawChart(datesPlayed);
+            });
         },
         onHide: function () {
             $(lineChart.element).empty();

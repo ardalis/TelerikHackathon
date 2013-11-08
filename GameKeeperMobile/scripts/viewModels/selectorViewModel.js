@@ -7,10 +7,12 @@
 
         var vm = kendo.observable(_.extend({
             dataSource: dataSource,
+            displayLinks: false,
 
             show: function (callback, options) {
                 currentOptions = options || {};
                 selectedCallback = callback;
+                vm.set("displayLinks", currentOptions.displayLinks);
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 
@@ -19,6 +21,8 @@
             },
 
             onItemSelected: function (e) {
+                if (vm.get("displayLinks"))
+                    return;
                 vm.complete(e.dataItem);
                 if (!currentOptions.stayOpen) {
                     window.app.application.navigate("#:back");

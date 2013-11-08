@@ -10,7 +10,7 @@
     // HACK: judges
     var overrides = {
         'stephen.forte@telerik.com': 'https://dl.dropboxusercontent.com/u/14515711/hackathon/forte.PNG',
-        'mihail.valkov@telerik.com': 'https://dl.dropboxusercontent.com/u/14515711/hackathon/mischo.PNG',
+        'mihail.valkov@telerik.com': 'https://dl.dropboxusercontent.com/u/14515711/hackathon/misho.JPG',
         'doug.laird@telerik.com': 'https://dl.dropboxusercontent.com/u/14515711/hackathon/douglaird.PNG',
         'zarko@telerik.com': 'https://dl.dropboxusercontent.com/u/14515711/hackathon/zarko.PNG'
     };
