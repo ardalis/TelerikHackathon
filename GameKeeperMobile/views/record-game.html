@@ -19,8 +19,11 @@
                 Game
                 <ul>
                     <li class="select-options-btn">
-                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="invisible: hasSelectedGame"><span class="btn-text">[ Choose Game] </span><i class="fa fa-pencil btn-edit-square"></i></a>
-                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="visible: hasSelectedGame"><span data-bind="text: selectedGameTitle"></span></a>
+                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="invisible: hasSelectedGame"><span class="btn-text">[ Choose Game ] </span><i class="fa fa-pencil btn-edit-square"></i></a>
+                        <a data-role="button" data-click="app.viewModels.recordGame.onChooseGameTapped" data-bind="visible: hasSelectedGame">
+                            <img data-bind="attr: { src: selectedGameBoxImageUrl }" width="48" height="48" />
+                            <span data-bind="text: selectedGameTitle"></span>
+                        </a>
                     </li>
                 </ul>
             </li>

@@ -41,6 +41,9 @@
         selectedGameTitle: function () {
             return vm.hasSelectedGame() ? vm.get("selectedGame").Name : "";
         },
+        selectedGameBoxImageUrl: function () {
+            return vm.hasSelectedGame() ? vm.get("selectedGame").BoxImageUrl : "";
+        },
 
         onChooseEventTapped: function () {
             chooseEventDialog.show(function (event) {
