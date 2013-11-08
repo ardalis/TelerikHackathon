@@ -12,7 +12,7 @@
             show: function (callback, options) {
                 currentOptions = options || {};
                 selectedCallback = callback;
-                vm.set("displayLinks", options.displayLinks);
+                vm.set("displayLinks", currentOptions.displayLinks);
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
 
