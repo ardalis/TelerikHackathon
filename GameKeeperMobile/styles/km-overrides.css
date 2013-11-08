@@ -1,0 +1,8 @@
+﻿.km-android, .km-android .km-content {
+    background: #E6E6E5;
+}
+.km-ios7 .km-listgroup .km-group-title, .km-ios7 .km-listgroupinset .km-group-title {
+    line-height: 1.4em;
+    font-size: 12px;
+    border-top: 0;
+}
