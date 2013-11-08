@@ -5,10 +5,11 @@
 
     var vm = kendo.observable({
         dataSource: datasources.players,
-        selectedPlayers: [],
 
         show: function (callback, selectedPlayers) {
-            this.set("selectedPlayers", selectedPlayers);
+            vm.dataSource.data().filter(function (p) {
+                p.isChecked = selectedPlayers.indexOf(p.ID) >= 0;
+            });
             selectedCallback = callback;
             window.app.application.navigate(kendo.format("views/choose-players.html"));
         },
@@ -19,9 +20,10 @@
 
         // HACK :(
         onBackTapped: function () {
-            // BUG: Kendo isn't updating this binding unless we navigate to a subview, so we need to work around it.
-            var selectedPlayers = $.makeArray($("#choose-players input[type=checkbox]:checked").map(function () {
-                return this.value;
+            var selectedPlayers = $.makeArray(vm.dataSource.data().filter(function (p) {
+                return p.isChecked;
+            }).map(function (p) {
+                return p.ID;
             }));
             vm.complete(selectedPlayers);
             window.app.application.navigate("#:back");
