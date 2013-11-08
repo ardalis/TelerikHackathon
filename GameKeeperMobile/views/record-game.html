@@ -12,10 +12,10 @@
                         <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="invisible: hasSelectedEvent"><span class="btn-text muted-text">Choose Event</span><i class="fa fa-pencil btn-edit-square"></i></a>
                         <a data-role="button" data-click="app.viewModels.recordGame.onChooseEventTapped" data-bind="visible: hasSelectedEvent">
                             <span data-bind="text: selectedEventTitle"></span>
-                            <!--
-                            <span data-bind="text: selectedEventLocation"></span>
-                            <span data-bind="text: selectedEventStartDate"></span>
-                            -->
+                            <div class="event-details">
+                                <span data-bind="text: selectedEventLocation" class="event-location"></span>
+                                <span data-bind="text: selectedEventStartDate" class="event-date"></span>
+                            </div>
                         </a>
                     </li>
                 </ul>

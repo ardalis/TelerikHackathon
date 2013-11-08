@@ -399,6 +399,21 @@ body, html {
     float: left;
     margin-top: 12px;
 }
+.event-details {
+    clear: both;
+}
+.event-date {
+    float: left;
+    color: #808285 !important;
+    font-size: 12px !important;
+}
+.event-location {
+    float: right;
+    color: #808285 !important;
+    font-size: 12px !important;
+    text-align: right;
+    width: 65%;
+}
 
 /* RETINA DISPLAY STYLES*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
