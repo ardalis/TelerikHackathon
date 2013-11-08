@@ -83,4 +83,17 @@
         </div>
 
     </div>
+    <script>
+        function changeTitle(e) {
+            if (e != undefined) {
+                var fromPage = e.view.params;
+                if (fromPage != undefined) {
+                    var kmnb = $("#navbar").data("kendoMobileNavBar");
+                    if (kmnb != undefined) {
+                        kmnb.title(fromPage.from);
+                    }
+                }
+            }
+        }
+    </script>
 </div>
