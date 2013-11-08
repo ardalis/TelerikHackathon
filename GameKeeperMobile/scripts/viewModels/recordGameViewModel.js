@@ -41,7 +41,7 @@
             return vm.hasSelectedEvent() ? vm.get("selectedEvent").Location : "";
         },
         selectedEventStartDate: function () {
-            return vm.hasSelectedEvent() ? vm.get("selectedEvent").StartDate : "";
+            return vm.hasSelectedEvent() ? kendo.toString(new Date(vm.get("selectedEvent").StartDate), "MMM d, yyyy") : "";
         },
         
         hasSelectedGame: function () {
