@@ -3,13 +3,15 @@
     "viewModels/chooseEventViewModel",
     "viewModels/chooseGameViewModel",
     "viewModels/choosePlayersViewModel",
-    "datasources"
+    "datasources",
+    "azure-client"
 ], function (
     radio,
     chooseEventDialog,
     chooseGameDialog,
     choosePlayersDialog,
-    datasources
+    datasources,
+    azureClient
 ) {
     "use strict";
 
@@ -64,7 +66,32 @@
             tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
         },
         onSaveButtonTapped: function (e) {
-            debugger;
+            azureClient.getTable('match').insert({
+                GameID: vm.selectedGame.id,
+                DateCreated: new Date()
+            }).then(function (match) {
+                var winnersTable = azureClient.getTable('matchwinner');
+                var losersTable = azureClient.getTable('matchloser');
+                var saveWinners = vm.selectedPlayers.filter(function (player) { return player.IsWinner; }).map(function (player) {
+                    return winnersTable.insert({
+                        MatchID: match.id,
+                        PlayerID: player.ID,
+                        Score: 1
+                    });
+                });
+                var saveLosers = vm.selectedPlayers.filter(function (player) { return !player.IsWinner; }).map(function (player) {
+                    return losersTable.insert({
+                        MatchID: match.id,
+                        PlayerID: player.ID,
+                        Score: 0
+                    });
+                });
+                $.when.apply($, saveWinners).then(function (winners) {
+                    $.when.apply($, saveLosers).then(function (losers) {
+                        debugger;
+                    });
+                });
+            });
         }
     });
 
