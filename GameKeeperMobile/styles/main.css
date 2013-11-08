@@ -276,40 +276,20 @@ body, html {
 }
 
 .top-logo {
-    background: url(images/top-logo.png) no-repeat left -8px;
-    background-size: 202px 54px;
+    background: url(images/top-logo.png) no-repeat right -8px;
+    background-size: 202px 44px;
     text-indent: -10000px;
 }
-.header div[data-role="navbar"] {
+.top-logo {
+    /*background: url(images/top-logo.png) no-repeat right -8px;*/
+    background-size: 202px 34px;
+    /*text-indent: -10000px;*/
+}
+/*.header div[data-role="navbar"] {
     background: #193B67;
-}
+}*/
 
-.select-options-btn>a {
-    border: 0 none ! important;
-    display: block;
-    color: transparent;
-    min-height: 62px;
-}
-.select-options-btn>a>span {
-    border: 0 none;
-    color: black;
-    padding-left: 0;
-    font-size: 20px;
-}
-.select-options-btn>a>span.btn-text {
-    margin-top: 12px;
-    float: left;
-}
-.btn-edit-square {
-    background: #016C97;
-    width: 48px;
-    height: 48px;
-    color: white;
-    font-size: 21px;
-    padding: .6em 0;
-    text-align: center;
-    float: right;
-}
+
 
 /* RETINA DISPLAY STYLES*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
