@@ -26,15 +26,19 @@ body, html {
 
 /* PLAYER LIST */
 .player-name {
+    display: block;
+    float: left;
+    margin-top: 6px;
+    font-size: 20px;
 }
 
 .player-email {
-    font-size: smaller;
-    color: #888;
-}
-
-.player-list-avatar {
-    margin-right: 0.5em;
+    font-size: 12px;
+    color: #808285;
+    display: block;
+    float: left;
+    clear: left;
+    line-height: 1em;
 }
 
 .winner-list {
@@ -331,6 +335,20 @@ body, html {
     padding: .6em 0;
     text-align: center;
     float: right;
+}
+
+.thumbnail-img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    background: #E6E6E5;
+    margin-right: 12px;
+}
+.game-name {
+    display: inline-block;
+    float: left;
+    margin-top: 12px;
+    font-size: 20px;
 }
 
 /* RETINA DISPLAY STYLES*/
