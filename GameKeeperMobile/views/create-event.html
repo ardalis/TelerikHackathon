@@ -12,14 +12,23 @@
                         <input type="text" data-bind="value: title" required data-required-msg="Event title is required." />
                     </label>
                 </li>
-                <li>
+                <li data-bind="invisible: hasCandidateLocations">
                     <label>
                         Location
                         <input type="text" data-bind="value: location" />
                     </label>
                 </li>
-                <li class="current-location">
+                <li data-bind="visible: hasCandidateLocations">
+                    <label>
+                        Location
+                        <select data-bind="value: location, source: candidateLocations"></select>
+                    </label>
+                </li>
+                <li class="current-location" data-bind="invisible: hasCandidateLocations">
                     <button type="button" class="km-button" data-bind="click: onUseCurrentLocationTapped">Use Current Location</button>
+                </li>
+                <li class="current-location" data-bind="visible: hasCandidateLocations">
+                    <button type="button" class="km-button" data-bind="click: onDoNotUseCurrentLocationTapped">Don't Use Current Location</button>
                 </li>
                 <li>
                     <label>

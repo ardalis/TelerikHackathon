@@ -51,8 +51,6 @@
                         { name: "Losses", count: losses.length }
                     ]);
 
-                    vm.
-
                     $(e.view).fadeIn();
                 });
             });

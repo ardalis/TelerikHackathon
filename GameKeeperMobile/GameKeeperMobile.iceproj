@@ -176,6 +176,7 @@
     <Content Include="views\create-player.html">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="views\leaders.html" />
     <Content Include="views\record-game.html" />
     <Content Include="views\reports.html" />
     <Content Include="views\userProfile.html" />
