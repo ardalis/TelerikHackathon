@@ -33,6 +33,7 @@
                     });
                 },
                 create: function (options) {
+                    delete options.data[idColumn];
                     table.insert(options.data).done(function (results) {
                         options.success(results);
                     });
