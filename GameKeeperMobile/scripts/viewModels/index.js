@@ -1,5 +1,6 @@
 ﻿define([
     "viewModels/reports/index",
+    "viewModels/leaderboards/index",
     "viewModels/recordGameViewModel",
     "viewModels/chooseEventViewModel",
     "viewModels/createEventViewModel",
@@ -10,6 +11,7 @@
     "viewModels/userProfileViewModel"
 ], function (
     reports,
+    leaderboards,
     recordGameViewModel,
     chooseEventViewModel,
     createEventViewModel,
@@ -23,6 +25,7 @@
 
     return {
         reports: reports,
+        leaders: leaderboards,
         recordGame: recordGameViewModel,
         chooseEvent: chooseEventViewModel,
         createEvent: createEventViewModel,

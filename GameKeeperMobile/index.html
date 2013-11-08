@@ -117,6 +117,17 @@
                 <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="position-left" />
             </li>
         </script>
+
+        <script id="ranking-list-item-template" type="text/x-kendo-template">
+            <tr>
+                <td>#: Rank #</td>
+                <td>
+                    <img data-bind="gravatar: EmailAddress" />
+                </td>
+                <td>#: Name #</td>
+                <td>#: Score #</td>
+            </tr>
+        </script>
         
     </body>
 </html>

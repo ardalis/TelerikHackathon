@@ -3,11 +3,13 @@
 
     var createSelectorViewModel = function(type, dataSource, extension) {
         var selectedCallback;
+        var currentOptions;
 
         var vm = kendo.observable(_.extend({
             dataSource: dataSource,
 
-            show: function (callback) {
+            show: function (callback, options) {
+                currentOptions = options || {};
                 selectedCallback = callback;
                 window.app.application.navigate(kendo.format("views/choose-{0}.html", type));
             },
@@ -18,7 +20,9 @@
 
             onItemSelected: function (e) {
                 vm.complete(e.dataItem);
-                window.app.application.navigate("#:back");
+                if (!currentOptions.stayOpen) {
+                    window.app.application.navigate("#:back");
+                }
             }
         }, extension || {}));
 
