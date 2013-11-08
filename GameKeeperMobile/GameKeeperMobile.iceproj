@@ -175,6 +175,8 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\record-game.html" />
+    <Content Include="views\reports.html" />
+    <Content Include="views\reports\success-over-time.html" />
     <Content Include="views\userProfile.html" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +200,7 @@
     <Folder Include="styles\" />
     <Folder Include="styles\images\" />
     <Folder Include="views\" />
+    <Folder Include="views\reports\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
   <!--
