@@ -383,8 +383,13 @@ body, html {
     margin-top: 12px;
     font-size: 20px;
 }
-.button-row {
-    border-bottom: 0 none;
+.selected-option img {
+    float: left;
+    margin-right: 12px;
+}
+.selected-option span {
+    float: left;
+    margin-top: 12px;
 }
 
 /* RETINA DISPLAY STYLES*/
@@ -393,9 +398,4 @@ body, html {
         background: url(images/top-logo@2x.png) no-repeat left top;
         background-size: 202px 54px;
     }
-}
-
-[data-gravatar-size="32"] {
-    width: 32px;
-    height: 32px;
 }
