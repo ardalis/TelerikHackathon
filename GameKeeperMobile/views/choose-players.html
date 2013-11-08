@@ -1,8 +1,8 @@
 ﻿<div id="choose-players"
-        data-role="view"
-        data-title="Choose Players"
-        data-model="app.viewModels.choosePlayers"
-        data-layout="plain-layout">
+     data-layout="sub-pages"
+     data-role="view"
+     data-title="Choose Players"
+     data-model="app.viewModels.choosePlayers">
     <div data-role="header">
         <div data-role="navbar">
             <a class="nav-button km-widget km-back" data-align="left" data-role="button" data-click="app.viewModels.choosePlayers.onBackTapped"></a>
@@ -11,9 +11,9 @@
     </div>
     <div class="view-content">
         <div data-role="listview"
-                data-bind="source: dataSource"
-                data-template="choose-players-list-item-template"
-                data-filterable="{ field: 'Name', ignoreCase: true, operator: 'contains' }"></div>
+             data-bind="source: dataSource"
+             data-template="choose-players-list-item-template"
+             data-filterable="{ field: 'Name', ignoreCase: true, operator: 'contains' }"></div>
     </div>
     <div data-role="footer">
         <div class="km-content">

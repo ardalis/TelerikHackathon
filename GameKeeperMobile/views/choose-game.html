@@ -1,13 +1,14 @@
 ﻿<div id="choose-game"
-        data-role="view"
-        data-title="Choose Game"
-        data-model="app.viewModels.chooseGame">
+     data-layout="sub-pages"
+     data-role="view"
+     data-title="Choose Game"
+     data-model="app.viewModels.chooseGame">
     <div class="view-content">
         <div data-role="listview"
-                data-bind="source: dataSource"
-                data-template="choose-game-list-item-template"
-                data-filterable="{ field: 'Name', ignoreCase: true, operator: 'contains' }"
-                data-click="app.viewModels.chooseGame.onItemSelected"></div>
+             data-bind="source: dataSource"
+             data-template="choose-game-list-item-template"
+             data-filterable="{ field: 'Name', ignoreCase: true, operator: 'contains' }"
+             data-click="app.viewModels.chooseGame.onItemSelected"></div>
     </div>
     <div data-role="footer">
         <div class="km-content">

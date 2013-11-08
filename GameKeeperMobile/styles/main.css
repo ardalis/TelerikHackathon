@@ -292,13 +292,19 @@ body, html {
 }
 
 .top-logo {
-    background: url(images/top-logo.png) no-repeat left -8px;
-    background-size: 202px 54px;
+    background: url(images/top-logo.png) no-repeat right -8px;
+    background-size: 202px 44px;
     text-indent: -10000px;
 }
-.header div[data-role="navbar"] {
-    background: #193B67;
+.top-logo {
+    /*background: url(images/top-logo.png) no-repeat right -8px;*/
+    background-size: 202px 34px;
+    /*text-indent: -10000px;*/
 }
+/*.header div[data-role="navbar"] {
+    background: #193B67;
+}*/
+
 
 .select-options-btn>a {
     border: 0 none ! important;
