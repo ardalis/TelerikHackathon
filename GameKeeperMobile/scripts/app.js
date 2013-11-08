@@ -35,6 +35,7 @@ require(["viewModels/index", "radio", "binders/gravatar"], function (viewModels,
     app.viewModels = viewModels;
 
     app.application = new kendo.mobile.Application(document.body, {
+        skin: "ios7",
         layout: "default-layout",
         statusBarStyle: statusBarStyle,
         transition: "slide"
