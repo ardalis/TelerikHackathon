@@ -422,3 +422,7 @@ body, html {
         background-size: 202px 54px;
     }
 }
+
+svg, svg * {
+    -webkit-pointer-events: none !important;
+}
