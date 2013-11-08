@@ -11,7 +11,7 @@
                 <a data-role="button" href="#player-stats">Player Stats</a>
             </li>-->
             <li>
-                <a data-role="button" href="#matches-by-game">Matches by Game</a>
+                <button type="button" data-role="button" data-click="app.viewModels.reports.matchesByGame.show">Matches by Game</button>
             </li>
         </ul>
     </div>
@@ -39,5 +39,7 @@
         data-show="app.viewModels.reports.matchesByGame.onShow"
         data-hide="app.viewModels.reports.matchesByGame.onHide"
         data-stretch="true">
-    <div id="some-chart"></div>
+    <div class="view-content">
+        <div id="game-popularity-line-chart"></div>
+    </div>
 </div>
