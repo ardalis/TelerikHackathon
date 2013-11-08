@@ -399,3 +399,8 @@ body, html {
         background-size: 202px 54px;
     }
 }
+
+[data-gravatar-size="32"] {
+    width: 32px;
+    height: 32px;
+}
