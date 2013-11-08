@@ -29,13 +29,8 @@
     });
 
     radio("player/created").subscribe(function (item) {
-        debugger;
         datasources.players.add(item);
-        try {
-            datasources.players.sync();
-        } catch (ex) {
-            debugger;
-        }
+        datasources.players.sync();
         window.app.application.navigate("#:back");
     });
 

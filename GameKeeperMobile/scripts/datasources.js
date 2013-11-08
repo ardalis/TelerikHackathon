@@ -28,8 +28,14 @@
                     });
                 },
                 update: function (options) {
-                    debugger;
-                    options.fail("ph no");
+                    table.update(options.data).done(function (results) {
+                        options.success(results);
+                    });
+                },
+                create: function (options) {
+                    table.insert(options.data).done(function (results) {
+                        options.success(results);
+                    });
                 }
             }
         });
