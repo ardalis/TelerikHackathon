@@ -2,18 +2,21 @@
     "radio",
     "viewModels/chooseEventViewModel",
     "viewModels/chooseGameViewModel",
-    "viewModels/choosePlayersViewModel"
+    "viewModels/choosePlayersViewModel",
+    "datasources"
 ], function (
     radio,
     chooseEventDialog,
     chooseGameDialog,
-    choosePlayersDialog
+    choosePlayersDialog,
+    datasources
 ) {
     "use strict";
 
     var vm = kendo.observable({
         selectedEvent: null,
         selectedGame: null,
+        selectedPlayerIds: [],
         selectedPlayers: [],
 
         hasSelectedEvent: function () {
@@ -42,10 +45,23 @@
         },
         onChoosePlayersTapped: function () {
             choosePlayersDialog.show(function (playerIds) {
-                // hooray!
-                vm.set("selectedPlayers", playerIds);
-                console.log(playerIds);
-            }, vm.get("selectedPlayers"));
+                var selectedPlayerViewModels = datasources.players.data().filter(function (player) {
+                    return playerIds.indexOf(player.id) >= 0;
+                }).map(function (player) {
+                    return vm.get("selectedPlayers").filter(function (pvm) { return pvm.id === player.id; })[0] || {
+                        id: player.id,
+                        Name: player.Name,
+                        Email: player.Email,
+                        IsWinner: false
+                    };
+                });
+                vm.set("selectedPlayerIds", playerIds);
+                vm.set("selectedPlayers", selectedPlayerViewModels);
+            }, vm.get("selectedPlayerIds"));
+        },
+        onPlayerIconTapped: function (e) {
+            var tappedPlayer = e.target.kendoBindingTarget.source;
+            tappedPlayer.set("IsWinner", !tappedPlayer.get("IsWinner"));
         }
     });
 
