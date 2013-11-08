@@ -65,7 +65,7 @@ body, html {
 }
 
 .edit-player-list {
-    width: 56px;
+    width: 54px;
     height: 56px;
 }
 .winner-list li[data-is-winner=true] img {
@@ -90,7 +90,7 @@ body, html {
     border-radius: 7px;
 }
 .km-listview-label input[type=checkbox] {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
 }
 
 /* IMAGE STYLES*/
@@ -376,6 +376,10 @@ body, html {
     float: left;
     background: #E6E6E5;
     margin-right: 12px;
+}
+.gravatar-thumbnail-img {
+    width: 48px;
+    height: 48px;
 }
 .game-name {
     display: inline-block;
