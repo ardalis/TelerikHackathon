@@ -3,27 +3,18 @@
 
     var vm = kendo.observable ({
         id: kendo.guid(),
-        name: "Joe Bag O'Donuts",
-        email: "jeff.fritz@telerik.com",
+        name: "",
+        email: "",
         createdAt: new Date(2013, 10, 6),
-        recentMatches: 14,
-        recentWins: 3,
+        recentMatches: 0,
+        recentWins: 0,
         topGames: new kendo.data.DataSource({
-            data: [
-                { name: "Chess", wins: 10 },
-                { name: "Checkers", wins: 8 },
-                { name: "Backgammon", wins: 6 },
-                { name: "Dominoes", wins: 4 },
-                { name: "Settlers of Catan", wins: 3 }
-            ]
+            data: []
         }),
-        winLoss: [
-            { name: "Wins", count: 20 },
-            { name: "Losses", count: 10 }
-        ],
+        winLoss: [],
         formattedCreateDate: function () {
             return kendo.toString(vm.createdAt, "MMM d, yyyy");
-        },
+        }, /**
         frequentOpp: "Mary Contrary",
         frequentOppWins: 10,
         frequentOppLosses: 8,
@@ -33,6 +24,7 @@
         lossOpp: "Phil Japikse",
         lossOppWins: 4,
         lossOppLosses: 8,
+        **/ 
 
         onBeforeShow: function (e) {
             var playerId = 5;
@@ -56,10 +48,32 @@
             });
 
             // Frequent games
-            var preferredGames = azureClient.invokeApi("preferredgamesforplayer", {
+            var prefGames = azureClient.invokeApi("preferredgamesforplayer", {
                 method: 'get',
                 parameters: {playerid: playerId}
             }).then(function(result) {
+                vm.set("topGames", new kendo.data.DataSource({
+                    data: JSON.parse(result.response)
+                }))
+            })
+
+            // Profile Noteable Opponents
+            var notableOpponents = azureClient.invokeApi("profilenotableopponents", {
+                method: 'get',
+                parameters: { playerid: playerId }
+            }).then(function (nResult) {
+
+                var nPlayers = JSON.parse(nResult.response);
+                vm.set("frequentOpp", nPlayers[0].Name);
+                vm.set("frequentOppWins", nPlayers[0].Wins);
+                vm.set("frequentOppLosses", nPlayers[0].Losses);
+                vm.set("lossOpp", nPlayers[1].Name);
+                vm.set("lossOppWins", nPlayers[1].Wins);
+                vm.set("lossOppLosses", nPlayers[1].Losses);
+                vm.set("winOpp", nPlayers[2].Name);
+                vm.set("winOppWins", nPlayers[2].Wins);
+                vm.set("winOppLosses", nPlayers[2].Losses);
+
                 vm.set("topGames", new kendo.data.DataSource({
                     data: JSON.parse(result.response)
                 }))

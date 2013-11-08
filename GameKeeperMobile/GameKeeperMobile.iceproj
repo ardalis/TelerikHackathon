@@ -105,6 +105,8 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="scripts\viewModels\index.js" />
+    <Content Include="scripts\viewModels\leaderboards\index.js" />
+    <Content Include="scripts\viewModels\leaderboards\leaderboardViewModel.js" />
     <Content Include="scripts\viewModels\recordGameViewModel.js" />
     <Content Include="scripts\viewModels\reports\index.js" />
     <Content Include="scripts\viewModels\reports\gameplayHistoryViewModel.js" />
@@ -201,6 +203,7 @@
     <Folder Include="scripts\" />
     <Folder Include="scripts\binders\" />
     <Folder Include="scripts\viewModels\" />
+    <Folder Include="scripts\viewModels\leaderboards\" />
     <Folder Include="scripts\viewModels\reports\" />
     <Folder Include="styles\" />
     <Folder Include="styles\images\" />

@@ -63,6 +63,7 @@
                 }
             }
         });
+        lineChart = $lineChart.data("kendoChart");
     };
 
     var vm = kendo.observable({

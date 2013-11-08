@@ -5,8 +5,32 @@
     <div class="view-content">
         <ul data-role="listview">
             <li>
-                Leaderboards
+                <a data-role="button" href="#most-wins-global">Most Wins (Global)</a>
+            </li>
+            <li>
+                <a data-role="button" href="#wins-by-game">Most Wins by Game</a>
             </li>
         </ul>
     </div>
 </div>
+
+<div id="most-wins-global"
+     data-layout="sub-pages"
+     data-role="view"
+     data-title="Most Wins (Global)"
+     data-stretch="true"
+     data-model="app.viewModels.leaders.globalWins"
+     data-before-show="app.viewModels.leaders.globalWins.onBeforeShow">
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th></th>
+                <th>Player</th>
+                <th data-bind="text: dimension"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="source: rankings" data-template="ranking-list-item-template"></tbody>
+    </table>
+</div>
+
