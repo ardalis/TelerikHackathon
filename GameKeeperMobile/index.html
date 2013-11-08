@@ -23,7 +23,8 @@
              data-role="view"
              data-title="Home"
              data-layout="plain-layout"
-             data-model="app.viewModels.home">
+             data-model="app.viewModels.home"
+             data-stretch="true">
 
             <div class="view-content home-buttons-container">
                 <p>
@@ -95,14 +96,17 @@
     </script>
 
     <script id="choose-players-list-item-template" type="text/x-kendo-template">
+        <label>
             <img data-bind="gravatar: EmailAddress" data-gravatar-size="48" class="thumbnail-img" />
             <div class="position-left">
                 <div class="player-name" data-bind="text: Name"></div>
                 <div class="player-email" data-bind="text: EmailAddress"></div>
             </div>
-            <input type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
-    </script>
+            <input class="position-right" type="checkbox" data-bind="value: ID, checked: selectedPlayers" />
+        </label>
+   </script>
 
+        
         <script id="choose-event-list-item-template" type="text/x-kendo-template">
             #: Name #
         </script>
